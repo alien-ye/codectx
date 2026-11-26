@@ -1,0 +1,7 @@
+{
+  "repo": "django",
+  "run": "noop",
+  "seconds": 25.771363674999975,
+  "returncode": 0,
+  "stdout": "{\"total_files\": 7104, \"indexed_files\": 0, \"code_files\": 2943, \"skipped\": 0, \"reindexed\": 0, \"unchanged\": 7104, \"deleted\": 0, \"files_total\": 7104, \"files_by_language\": {\"unknown\": 4161, \"python\": 2943}, \"symbols_total\": 60397, \"refs_total\": 213347, \"index\": \"/workspace/codectx/bench/results/indexes/django\"}\n"
+}

@@ -1,0 +1,15 @@
+usage: judge_model.py [-h] --answers ANSWERS --output OUTPUT --base-url
+                      BASE_URL [--protocol {openai,ollama}] --model MODEL
+                      [--timeout TIMEOUT]
+
+Optional explicit model judge; never substitute heuristic matches for
+correctness.
+
+options:
+  -h, --help            show this help message and exit
+  --answers ANSWERS
+  --output OUTPUT
+  --base-url BASE_URL
+  --protocol {openai,ollama}
+  --model MODEL
+  --timeout TIMEOUT

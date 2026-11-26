@@ -1,0 +1,7 @@
+{
+  "repo": "kafka",
+  "run": "noop",
+  "seconds": 110.88312042899997,
+  "returncode": 0,
+  "stdout": "{\"total_files\": 7684, \"indexed_files\": 0, \"code_files\": 6510, \"skipped\": 0, \"reindexed\": 0, \"unchanged\": 7684, \"deleted\": 0, \"files_total\": 7684, \"files_by_language\": {\"unknown\": 1174, \"python\": 186, \"java\": 6324}, \"symbols_total\": 128267, \"refs_total\": 866287, \"index\": \"/workspace/codectx/bench/results/indexes/kafka\"}\n"
+}

@@ -1,0 +1,28 @@
+langchain loaded {'files_total': 3308, 'files_by_language': {'unknown': 636, 'python': 2672}, 'symbols_total': 27353, 'refs_total': 89749, 'index': '/workspace/codectx/bench/results/indexes/langchain'}
+langchain coverage complete
+langchain embedded 27353 in 9.788382384000215
+langchain queries complete
+langchain DONE {"lexical": {"n": 10, "file": {"R@1": 0.0, "R@5": 0.5, "R@10": 0.8, "MRR@10": 0.18416666666666667}, "warm_median_ms": 6.946386999970855, "warm_p95_ms": 8.425150999983089, "symbol": {"R@1": 0.0, "R@5": 0.0, "R@10": 0.0, "MRR@10": 0.0}}, "semantic": {"n": 10, "file": {"R@1": 0.2, "R@5": 0.7, "R@10": 0.8, "MRR@10": 0.4166666666666667}, "warm_median_ms": 3.956779000077404, "warm_p95_ms": 4.1928820000975975, "symbol": {"R@1": 0.1, "R@5": 0.2, "R@10": 0.4, "MRR@10": 0.145}}, "hybrid": {"n": 10, "file": {"R@1": 0.4, "R@5": 0.7, "R@10": 0.8, "MRR@10": 0.5226190476190476}, "warm_median_ms": 17.92205999993257, "warm_p95_ms": 19.07387500000368, "symbol": {"R@1": 0.3, "R@5": 0.4, "R@10": 0.4, "MRR@10": 0.33333333333333337}}, "hybrid_no_boost": {"n": 10, "file": {"R@1": 0.1, "R@5": 0.5, "R@10": 0.6, "MRR@10": 0.275}, "warm_median_ms": 17.741214000011496, "warm_p95_ms": 19.36904100011816, "symbol": {"R@1": 0.0, "R@5": 0.0, "R@10": 0.1, "MRR@10": 0.01}}, "file_bm25": {"n": 10, "file": {"R@1": 0.1, "R@5": 0.8, "R@10": 0.9, "MRR@10": 0.3592857142857143}, "warm_median_ms": 1.3756335000607578, "warm_p95_ms": 1.7205199999352772}, "rg_or": {"n": 10, "file": {"R@1": 0.0, "R@5": 0.0, "R@10": 0.0, "MRR@10": 0.0}, "warm_median_ms": 46.4273970000022, "warm_p95_ms": 49.52127199999268}}
+	Command being timed: "/workspace/codectx/.venv/bin/python /workspace/codectx/bench/evaluate.py langchain"
+	User time (seconds): 54.89
+	System time (seconds): 10.13
+	Percent of CPU this job got: 70%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:32.75
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 220568
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 707
+	Minor (reclaiming a frame) page faults: 325008
+	Voluntary context switches: 165686
+	Involuntary context switches: 4412
+	Swaps: 0
+	File system inputs: 128312
+	File system outputs: 197014
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

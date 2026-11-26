@@ -1,0 +1,38 @@
+jdk21u no-op stability check started
+jdk21u loaded {'files_total': 68851, 'files_by_language': {'unknown': 18381, 'java': 50468, 'python': 2}, 'symbols_total': 869718, 'refs_total': 2252213, 'index': '/workspace/codectx/bench/results/indexes/jdk21u'}
+jdk21u coverage complete
+jdk21u embedded 869248 in 156.84815547800008
+jdk21u building full-source BM25 baseline
+jdk21u file BM25 ready 170.78833203800014 seconds
+jdk21u queries evaluated 25
+jdk21u queries evaluated 50
+jdk21u queries evaluated 75
+jdk21u queries evaluated 100
+jdk21u queries complete
+jdk21u cold CLI timing started
+jdk21u cold lexical samples [72.98933832700004]
+jdk21u cold hybrid samples [138.83318128799965]
+jdk21u DONE {"lexical": {"n": 10, "file": {"R@1": 0.2, "R@5": 0.3, "R@10": 0.5, "MRR@10": 0.2767857142857143}, "warm_median_ms": 110.27036699942983, "warm_p95_ms": 221.89685400007875, "symbol": {"R@1": 0.0, "R@5": 0.0, "R@10": 0.0, "MRR@10": 0.0}}, "semantic": {"n": 10, "file": {"R@1": 0.2, "R@5": 0.5, "R@10": 0.6, "MRR@10": 0.3277777777777778}, "warm_median_ms": 216.69536250010424, "warm_p95_ms": 1740.3413100000762, "symbol": {"R@1": 0.1, "R@5": 0.1, "R@10": 0.2, "MRR@10": 0.1125}}, "hybrid": {"n": 10, "file": {"R@1": 0.2, "R@5": 0.5, "R@10": 0.7, "MRR@10": 0.3311111111111111}, "warm_median_ms": 262.36167050001313, "warm_p95_ms": 558.078273999854, "symbol": {"R@1": 0.1, "R@5": 0.2, "R@10": 0.4, "MRR@10": 0.18333333333333332}}, "hybrid_no_boost": {"n": 10, "file": {"R@1": 0.2, "R@5": 0.5, "R@10": 0.5, "MRR@10": 0.2783333333333333}, "warm_median_ms": 222.2329960004572, "warm_p95_ms": 325.5141769996044, "symbol": {"R@1": 0.0, "R@5": 0.0, "R@10": 0.0, "MRR@10": 0.0}}, "file_bm25": {"n": 10, "file": {"R@1": 0.2, "R@5": 0.5, "R@10": 0.7, "MRR@10": 0.35333333333333333}, "warm_median_ms": 42.62320499992711, "warm_p95_ms": 189.10116600000038}, "rg_or": {"n": 10, "file": {"R@1": 0.0, "R@5": 0.0, "R@10": 0.0, "MRR@10": 0.0}, "warm_median_ms": 1630.4261099999167, "warm_p95_ms": 6263.389976999861}}
+	Command being timed: "/workspace/codectx/.venv/bin/python /workspace/codectx/bench/evaluate.py jdk21u"
+	User time (seconds): 916.59
+	System time (seconds): 147.75
+	Percent of CPU this job got: 80%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 21:56.47
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2317084
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 49427
+	Minor (reclaiming a frame) page faults: 2017577
+	Voluntary context switches: 1992594
+	Involuntary context switches: 61536
+	Swaps: 0
+	File system inputs: 4477952
+	File system outputs: 5813812
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

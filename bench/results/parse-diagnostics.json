@@ -1,0 +1,4308 @@
+{
+  "langchain": [],
+  "django": [
+    {
+      "file": "tests/test_runner_apps/tagged/tests_syntax_error.py",
+      "language": "python",
+      "error": "syntax error in source",
+      "diagnostics": [],
+      "groovy_text_normalized": false
+    }
+  ],
+  "spring-boot": [
+    {
+      "file": "buildSrc/SpringRepositorySupport.groovy",
+      "language": "groovy",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 19,
+          "type": "ERROR",
+          "missing": false,
+          "text": "settings"
+        },
+        {
+          "line": 23,
+          "type": "ERROR",
+          "missing": false,
+          "text": "settings.gradle.allprojects"
+        },
+        {
+          "line": 28,
+          "type": "ERROR",
+          "missing": false,
+          "text": ","
+        }
+      ],
+      "groovy_text_normalized": true
+    },
+    {
+      "file": "buildpack/spring-boot-buildpack-platform/src/main/java/org/springframework/boot/buildpack/platform/docker/DockerApi.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 130,
+          "type": "ERROR",
+          "missing": false,
+          "text": ", Object @Nullable ... params"
+        },
+        {
+          "line": 144,
+          "type": "ERROR",
+          "missing": false,
+          "text": ", Object @Nullable ... params"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "buildpack/spring-boot-buildpack-platform/src/main/java/org/springframework/boot/buildpack/platform/docker/ssl/PemPrivateKeyParser.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 311,
+          "type": "ERROR",
+          "missing": false,
+          "text": "int @Nullable ... elements"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "cli/spring-boot-cli/src/test/resources/classloader-test-app.groovy",
+      "language": "groovy",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 11,
+          "type": "ERROR",
+          "missing": false,
+          "text": "println"
+        }
+      ],
+      "groovy_text_normalized": true
+    },
+    {
+      "file": "cli/spring-boot-cli/src/test/resources/commands/closure.groovy",
+      "language": "groovy",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 5,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 6,
+          "type": "ERROR",
+          "missing": false,
+          "text": "println"
+        },
+        {
+          "line": 6,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": true
+    },
+    {
+      "file": "cli/spring-boot-cli/src/test/resources/commands/command.groovy",
+      "language": "groovy",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 9,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 11,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 13,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": true
+    },
+    {
+      "file": "cli/spring-boot-cli/src/test/resources/commands/handler.groovy",
+      "language": "groovy",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 7,
+          "type": "ERROR",
+          "missing": false,
+          "text": "@Grab(\"org.eclipse.jgit:org.eclipse.jgit:2.3.1.201302201838-r\")"
+        },
+        {
+          "line": 13,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 16,
+          "type": "ERROR",
+          "missing": false,
+          "text": "option \"foo\", \"Foo set\""
+        }
+      ],
+      "groovy_text_normalized": true
+    },
+    {
+      "file": "cli/spring-boot-cli/src/test/resources/commands/options.groovy",
+      "language": "groovy",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 6,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\"Foo\""
+        },
+        {
+          "line": 9,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 11,
+          "type": "ERROR",
+          "missing": false,
+          "text": "{"
+        }
+      ],
+      "groovy_text_normalized": true
+    },
+    {
+      "file": "cli/spring-boot-cli/src/test/resources/dir-sample/code/app.groovy",
+      "language": "groovy",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 11,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 14,
+          "type": "ERROR",
+          "missing": false,
+          "text": "println \"Hello ${this.myService.sayWorld()} From ${getClass().getClassLoader().getResource('samples/app.groovy')}\""
+        },
+        {
+          "line": 23,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": true
+    },
+    {
+      "file": "cli/spring-boot-cli/src/test/resources/grab-samples/customDependencyManagement.groovy",
+      "language": "groovy",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 5,
+          "type": "ERROR",
+          "missing": false,
+          "text": "@DependencyManagementBom('test:child:1.0.0');\n@Grab('ejb-api')"
+        }
+      ],
+      "groovy_text_normalized": true
+    },
+    {
+      "file": "cli/spring-boot-cli/src/test/resources/grab-samples/duplicateDependencyManagementBom.groovy",
+      "language": "groovy",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 5,
+          "type": "ERROR",
+          "missing": false,
+          "text": "@DependencyManagementBom(\"foo:bar:1.0\");\n@DependencyManagementBom(\"alpha:bravo:2.0\")"
+        }
+      ],
+      "groovy_text_normalized": true
+    },
+    {
+      "file": "cli/spring-boot-cli/src/test/resources/grab-samples/grab.groovy",
+      "language": "groovy",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 5,
+          "type": "ERROR",
+          "missing": false,
+          "text": ";"
+        }
+      ],
+      "groovy_text_normalized": true
+    },
+    {
+      "file": "cli/spring-boot-cli/src/test/resources/grab.groovy",
+      "language": "groovy",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 5,
+          "type": "ERROR",
+          "missing": false,
+          "text": "@GrabResolver(name=\"test\", root=\"file:./src/test/plugins\");\n@Grab(\"custom:custom:0.0.1\");\n@Controller\nclass Foo {}\n\nprintln \"Hello Grab\""
+        }
+      ],
+      "groovy_text_normalized": true
+    },
+    {
+      "file": "cli/spring-boot-cli/src/test/resources/init.groovy",
+      "language": "groovy",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 5,
+          "type": "ERROR",
+          "missing": false,
+          "text": "println \"Hello Init\""
+        }
+      ],
+      "groovy_text_normalized": true
+    },
+    {
+      "file": "cli/spring-boot-cli/src/test/resources/repro-samples/data-jpa.groovy",
+      "language": "groovy",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 5,
+          "type": "ERROR",
+          "missing": false,
+          "text": "@Grab('spring-boot-starter-data-jpa');\n@Grab('h2')"
+        },
+        {
+          "line": 14,
+          "type": "ERROR",
+          "missing": false,
+          "text": "println \"Hello World\""
+        }
+      ],
+      "groovy_text_normalized": true
+    },
+    {
+      "file": "cli/spring-boot-cli/src/test/resources/repro-samples/grab-ant-builder.groovy",
+      "language": "groovy",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 5,
+          "type": "ERROR",
+          "missing": false,
+          "text": "@Grab(\"org.apache.groovy:groovy-ant:4.0.1\")"
+        },
+        {
+          "line": 11,
+          "type": "ERROR",
+          "missing": false,
+          "text": ";"
+        },
+        {
+          "line": 13,
+          "type": "ERROR",
+          "missing": false,
+          "text": "message:"
+        }
+      ],
+      "groovy_text_normalized": true
+    },
+    {
+      "file": "cli/spring-boot-cli/src/test/resources/repro-samples/secure.groovy",
+      "language": "groovy",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 8,
+          "type": "ERROR",
+          "missing": false,
+          "text": "@Grab(\"spring-boot-starter-security\")"
+        },
+        {
+          "line": 15,
+          "type": "ERROR",
+          "missing": false,
+          "text": "println \"Hello World\""
+        }
+      ],
+      "groovy_text_normalized": true
+    },
+    {
+      "file": "cli/spring-boot-cli/src/test/resources/run-command/quiet.groovy",
+      "language": "groovy",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 11,
+          "type": "ERROR",
+          "missing": false,
+          "text": "print \"Ssshh\""
+        }
+      ],
+      "groovy_text_normalized": true
+    },
+    {
+      "file": "cli/spring-boot-cli/src/test/resources/scripts/closure.groovy",
+      "language": "groovy",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 6,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\"Foo\""
+        },
+        {
+          "line": 9,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 10,
+          "type": "ERROR",
+          "missing": false,
+          "text": "def"
+        }
+      ],
+      "groovy_text_normalized": true
+    },
+    {
+      "file": "cli/spring-boot-cli/src/test/resources/scripts/command.groovy",
+      "language": "groovy",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 11,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 13,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 15,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": true
+    },
+    {
+      "file": "cli/spring-boot-cli/src/test/resources/scripts/commands.groovy",
+      "language": "groovy",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 5,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 7,
+          "type": "ERROR",
+          "missing": false,
+          "text": "println"
+        },
+        {
+          "line": 7,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": true
+    },
+    {
+      "file": "cli/spring-boot-cli/src/test/resources/scripts/handler.groovy",
+      "language": "groovy",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 7,
+          "type": "ERROR",
+          "missing": false,
+          "text": "@Grab(\"org.eclipse.jgit:org.eclipse.jgit:2.3.1.201302201838-r\")"
+        },
+        {
+          "line": 13,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 16,
+          "type": "ERROR",
+          "missing": false,
+          "text": "option \"foo\", \"Foo set\""
+        }
+      ],
+      "groovy_text_normalized": true
+    },
+    {
+      "file": "cli/spring-boot-cli/src/test/resources/scripts/options.groovy",
+      "language": "groovy",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 5,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 6,
+          "type": "ERROR",
+          "missing": false,
+          "text": "{"
+        },
+        {
+          "line": 7,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": true
+    },
+    {
+      "file": "core/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/condition/ConditionMessage.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 336,
+          "type": "ERROR",
+          "missing": false,
+          "text": "Object @Nullable ... items"
+        },
+        {
+          "line": 348,
+          "type": "ERROR",
+          "missing": false,
+          "text": ", Object @Nullable ... items"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "core/spring-boot-test/src/test/resources/org/springframework/boot/test/SpringApplicationConfigurationGroovyConventionConfigurationTestsContext.groovy",
+      "language": "groovy",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 5,
+          "type": "ERROR",
+          "missing": false,
+          "text": "beans"
+        },
+        {
+          "line": 6,
+          "type": "ERROR",
+          "missing": false,
+          "text": "foo String, \"World\""
+        }
+      ],
+      "groovy_text_normalized": true
+    },
+    {
+      "file": "core/spring-boot-test/src/test/resources/org/springframework/boot/test/context/SpringBootTestGroovyConventionConfigurationTestsContext.groovy",
+      "language": "groovy",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 5,
+          "type": "ERROR",
+          "missing": false,
+          "text": "beans"
+        },
+        {
+          "line": 6,
+          "type": "ERROR",
+          "missing": false,
+          "text": "foo String, \"World\""
+        }
+      ],
+      "groovy_text_normalized": true
+    },
+    {
+      "file": "core/spring-boot-test/src/test/resources/test.groovy",
+      "language": "groovy",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 5,
+          "type": "ERROR",
+          "missing": false,
+          "text": "beans"
+        },
+        {
+          "line": 6,
+          "type": "ERROR",
+          "missing": false,
+          "text": "foo String, \"World\""
+        }
+      ],
+      "groovy_text_normalized": true
+    },
+    {
+      "file": "core/spring-boot/src/main/java/org/springframework/boot/context/properties/bind/Bindable.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 171,
+          "type": "ERROR",
+          "missing": false,
+          "text": "Annotation @Nullable ... annotations"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "core/spring-boot/src/main/java/org/springframework/boot/ssl/pem/PemPrivateKeyParser.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 311,
+          "type": "ERROR",
+          "missing": false,
+          "text": "int @Nullable ... elements"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "core/spring-boot/src/main/java/org/springframework/boot/util/LambdaSafe.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 60,
+          "type": "ERROR",
+          "missing": false,
+          "text": ",\n\t\t\t@Nullable Object @Nullable ... additionalArguments"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "module/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/endpoint/InvocationContext.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 39,
+          "type": "ERROR",
+          "missing": false,
+          "text": ",\n\t\t\tOperationArgumentResolver @Nullable ... argumentResolvers"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "module/spring-boot-jpa/src/main/java/org/springframework/boot/jpa/EntityManagerFactoryBuilder.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 248,
+          "type": "ERROR",
+          "missing": false,
+          "text": "String @Nullable ... packagesToScan"
+        },
+        {
+          "line": 301,
+          "type": "ERROR",
+          "missing": false,
+          "text": "String @Nullable ... mappingResources"
+        }
+      ],
+      "groovy_text_normalized": false
+    }
+  ],
+  "kafka": [
+    {
+      "file": "streams/quickstart/java/src/main/resources/archetype-resources/src/main/java/LineSplit.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 17,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 17,
+          "type": "ERROR",
+          "missing": false,
+          "text": "package"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "streams/quickstart/java/src/main/resources/archetype-resources/src/main/java/Pipe.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 17,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 17,
+          "type": "ERROR",
+          "missing": false,
+          "text": "package"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "streams/quickstart/java/src/main/resources/archetype-resources/src/main/java/WordCount.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 17,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 17,
+          "type": "ERROR",
+          "missing": false,
+          "text": "package"
+        }
+      ],
+      "groovy_text_normalized": false
+    }
+  ],
+  "jdk21u": [
+    {
+      "file": "test/hotspot/jtreg/compiler/gcbarriers/TestZGCBarrierElision.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 194,
+          "type": "ERROR",
+          "missing": false,
+          "text": "Common.field1VarHandle.getAndSet\u200b(o, i)"
+        },
+        {
+          "line": 202,
+          "type": "ERROR",
+          "missing": false,
+          "text": "Common.field1VarHandle.getAndSet\u200b(o, i)"
+        },
+        {
+          "line": 208,
+          "type": "ERROR",
+          "missing": false,
+          "text": "Common.field1VarHandle.getAndSet\u200b(o, i)"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/hotspot/jtreg/runtime/exceptionMsgs/methodPrinting/TestPrintingMethods.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 83,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\u20ac\\u00a3"
+        },
+        {
+          "line": 83,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 122,
+          "type": "ERROR",
+          "missing": false,
+          "text": "m\\u20ac\\u00a3"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/jdk/sun/tools/jhsdb/HeapDumpTest.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 66,
+          "type": "ERROR",
+          "missing": false,
+          "text": ".\\u00CB"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/jdk/sun/tools/jhsdb/LingeredAppWithExtendedChars.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 27,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/jdk/javadoc/doclet/testSourceTab/DoubleTab/C.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 33,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\t\\t//This source\n\\t\\t//is indented\n\\t\\t"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/jdk/javadoc/doclet/testSourceTab/SingleTab/C.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 33,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\t//This source\n\\t//is indented\n\\t"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/jdk/javadoc/doclet/testSupplementary/C.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 14,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\ud801\\udc00"
+        },
+        {
+          "line": 19,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\ud801\\udc00"
+        },
+        {
+          "line": 24,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\ud834\\udd7b"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/jdk/javadoc/doclet/testTypeAnnotations/typeannos/RepeatedAnnotations.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 57,
+          "type": "ERROR",
+          "missing": false,
+          "text": ", @RepParameterA @RepParameterA @RepParameterB @RepParameterB String @RepTypeUseA @RepTypeUseA @RepTypeUseB @RepTypeUseB ... vararg"
+        },
+        {
+          "line": 61,
+          "type": "ERROR",
+          "missing": false,
+          "text": ", @RepParameterA @RepParameterA @RepParameterB @RepParameterB String @RepTypeUseA @RepTypeUseA @RepTypeUseB @RepTypeUseB ... vararg"
+        },
+        {
+          "line": 100,
+          "type": "ERROR",
+          "missing": false,
+          "text": ", @RepParameterA @RepParameterA @RepParameterB @RepParameterB String @RepTypeUseA @RepTypeUseA @RepTypeUseB @RepTypeUseB ... vararg"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/jdk/javadoc/doclet/testTypeAnnotations/typeannos/Varargs.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 38,
+          "type": "ERROR",
+          "missing": false,
+          "text": "Object @VarArgA... objs"
+        },
+        {
+          "line": 41,
+          "type": "ERROR",
+          "missing": false,
+          "text": "Class<?> @VarArgA ... clz"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/jdk/javadoc/doclet/testUnnamedPackage/src1/BadSource.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 24,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 24,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 24,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/jdk/javadoc/tool/6964914/Error.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 25,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/jdk/javadoc/tool/T4994049/FileWithTabs.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 25,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\"
+        },
+        {
+          "line": 25,
+          "type": "ERROR",
+          "missing": false,
+          "text": "void"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/6440583/A.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 26,
+          "type": "ERROR",
+          "missing": false,
+          "text": "1+1"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/7167125/DiffResultAfterSameOperationInnerClasses.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 80,
+          "type": "ERROR",
+          "missing": false,
+          "text": "="
+        },
+        {
+          "line": 80,
+          "type": "ERROR",
+          "missing": false,
+          "text": "="
+        },
+        {
+          "line": 81,
+          "type": "ERROR",
+          "missing": false,
+          "text": "="
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/8245153/T8245153.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 35,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\"
+        },
+        {
+          "line": 35,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\u0022"
+        },
+        {
+          "line": 38,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/AccessMethods/ChainedAssignment.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 47,
+          "type": "ERROR",
+          "missing": false,
+          "text": "(a) = (b) ="
+        },
+        {
+          "line": 57,
+          "type": "ERROR",
+          "missing": false,
+          "text": "="
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/BadAnnotation.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 11,
+          "type": "ERROR",
+          "missing": false,
+          "text": "int... illegal"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/BadHexConstant.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 12,
+          "type": "ERROR",
+          "missing": false,
+          "text": "0"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/DefiniteAssignment/ConstantInfiniteWhile.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 24,
+          "type": "ERROR",
+          "missing": false,
+          "text": "/*\n * @test\n * @bug 4053875\n * @summary Verify correct treatment of '|', '&', and '^' in constant expression\n *          controlling loop. No 'return' statement"
+        },
+        {
+          "line": 28,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 29,
+          "type": "ERROR",
+          "missing": false,
+          "text": "cannot terminate"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/Digits.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 11,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\u0663"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/EOI.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 10,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\u001a"
+        },
+        {
+          "line": 11,
+          "type": "ERROR",
+          "missing": false,
+          "text": "foobar\u001a"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/ExtraneousEquals.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 10,
+          "type": "ERROR",
+          "missing": false,
+          "text": "="
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/ForwardReference/UseBeforeDeclaration.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 37,
+          "type": "ERROR",
+          "missing": false,
+          "text": "= 3"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/MethodParameters/UncommonParamNames.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 38,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\"
+        },
+        {
+          "line": 39,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\u0000zero\\u0000"
+        },
+        {
+          "line": 40,
+          "type": "ERROR",
+          "missing": false,
+          "text": "zero\\u0000zero\\u0000"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/Parens3.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 12,
+          "type": "ERROR",
+          "missing": false,
+          "text": "(foo):"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/StandaloneQualifiedSuper.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 49,
+          "type": "ERROR",
+          "missing": false,
+          "text": "B.super"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/StoreClass.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 13,
+          "type": "ERROR",
+          "missing": false,
+          "text": "= null"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/T4994049/T4994049.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 13,
+          "type": "ERROR",
+          "missing": false,
+          "text": "BAR1"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/T6882235.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 10,
+          "type": "ERROR",
+          "missing": false,
+          "text": "="
+        },
+        {
+          "line": 11,
+          "type": "ERROR",
+          "missing": false,
+          "text": "e*"
+        },
+        {
+          "line": 12,
+          "type": "ERROR",
+          "missing": false,
+          "text": "="
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/T8026963/TypeAnnotationsCrashWithErroneousTreeTest.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 9,
+          "type": "ERROR",
+          "missing": false,
+          "text": "this"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/T8036019.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 34,
+          "type": "ERROR",
+          "missing": false,
+          "text": "String"
+        },
+        {
+          "line": 40,
+          "type": "ERROR",
+          "missing": false,
+          "text": "|B"
+        },
+        {
+          "line": 43,
+          "type": "ERROR",
+          "missing": false,
+          "text": "0"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/T8175198/AnnotationsAndFormalParamsTest.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 9,
+          "type": "ERROR",
+          "missing": false,
+          "text": "int i"
+        },
+        {
+          "line": 10,
+          "type": "ERROR",
+          "missing": false,
+          "text": "AnnotationsAndFormalParamsTest this"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/T8185983/RejectTypeArgsOnSelectTest.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 11,
+          "type": "ERROR",
+          "missing": false,
+          "text": ".iterator"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/T8199744/IncorrectMsgQualifiedReceiverTest.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 9,
+          "type": "ERROR",
+          "missing": false,
+          "text": ".this"
+        },
+        {
+          "line": 10,
+          "type": "ERROR",
+          "missing": false,
+          "text": ".this"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/T8203813/WrongReceiverTest.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 10,
+          "type": "ERROR",
+          "missing": false,
+          "text": "WrongReceiverTest wr.wr"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/T8286057.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 10,
+          "type": "ERROR",
+          "missing": false,
+          "text": "<>"
+        },
+        {
+          "line": 11,
+          "type": "ERROR",
+          "missing": false,
+          "text": "public enum E2<T>"
+        },
+        {
+          "line": 12,
+          "type": "ERROR",
+          "missing": false,
+          "text": "public enum E3<T, T>"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/T8295447.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 44,
+          "type": "ERROR",
+          "missing": false,
+          "text": "o instanceof java.awt.Point(int x, int y)? x + y:"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/T8314216.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 13,
+          "type": "ERROR",
+          "missing": false,
+          "text": "_"
+        },
+        {
+          "line": 14,
+          "type": "ERROR",
+          "missing": false,
+          "text": "String _,"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/TryWithResources/BadTwrSyntax.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 12,
+          "type": "ERROR",
+          "missing": false,
+          "text": ";"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/TryWithResources/PlainTry.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 9,
+          "type": "ERROR",
+          "missing": false,
+          "text": "try {\n            ;\n        }"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/TryWithResources/ResDeclOutsideTry.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 14,
+          "type": "identifier",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/TryWithResources/TwrForVariable2.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 13,
+          "type": "ERROR",
+          "missing": false,
+          "text": "(final v) {\n            fail(\"no modifiers before variables\");\n        }\n        try (@Deprecated v) {\n            fail(\"no annotations before variables\");\n    "
+        },
+        {
+          "line": 19,
+          "type": "ERROR",
+          "missing": false,
+          "text": ";"
+        },
+        {
+          "line": 22,
+          "type": "ERROR",
+          "missing": false,
+          "text": "((v)) {\n            fail(\"parentheses not allowed\");\n        }\n        try (v2[0]) {\n            fail(\"array access not allowed\");\n        }\n        try (v3[0]["
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/FinalReceiverTest.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 11,
+          "type": "ERROR",
+          "missing": false,
+          "text": ".this"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/neg/AnnComma.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 12,
+          "type": "ERROR",
+          "missing": false,
+          "text": ","
+        },
+        {
+          "line": 14,
+          "type": "ERROR",
+          "missing": false,
+          "text": ","
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/neg/NoDefault.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 8,
+          "type": "ERROR",
+          "missing": false,
+          "text": "{return 0"
+        },
+        {
+          "line": 9,
+          "type": "ERROR",
+          "missing": false,
+          "text": "}"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/neg/NoStatic.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 9,
+          "type": "ERROR",
+          "missing": false,
+          "text": "{return 0"
+        },
+        {
+          "line": 10,
+          "type": "ERROR",
+          "missing": false,
+          "text": "}"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/neg/Syntax1.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 17,
+          "type": "ERROR",
+          "missing": false,
+          "text": "ElementType.METHOD, ElementType.TYPE"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/neg/Z13.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 11,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/neg/Z14.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 10,
+          "type": "ERROR",
+          "missing": false,
+          "text": "@interface An<T>"
+        },
+        {
+          "line": 11,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 11,
+          "type": "ERROR",
+          "missing": false,
+          "text": "()"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/neg/Z2.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 13,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 13,
+          "type": "identifier",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/neg/Z3.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 13,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 13,
+          "type": "identifier",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/neg/Z5.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 12,
+          "type": "ERROR",
+          "missing": false,
+          "text": "extends Foo"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/neg/Z8.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 11,
+          "type": "ERROR",
+          "missing": false,
+          "text": "int y"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/neg/Z9.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 10,
+          "type": "}",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 12,
+          "type": "ERROR",
+          "missing": false,
+          "text": "}"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/typeAnnotations/6967002/T6967002.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 10,
+          "type": "ERROR",
+          "missing": false,
+          "text": "..., ?"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/typeAnnotations/TypeUseTarget.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 39,
+          "type": "ERROR",
+          "missing": false,
+          "text": ", @A String @A ... vararg"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/typeAnnotations/api/AnnotatedArrayOrder.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 122,
+          "type": "ERROR",
+          "missing": false,
+          "text": "@G String @H ... vararg1"
+        },
+        {
+          "line": 128,
+          "type": "ERROR",
+          "missing": false,
+          "text": "void varargLong(@I String @L [] @K [] @J ... vararg2) { }\n    static {\n        // Shouldn't find @I, as it is a parameter annotation\n        expectedLocations.p"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/typeAnnotations/api/ArrayPositionConsistency.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 131,
+          "type": "ERROR",
+          "missing": false,
+          "text": "@B ... arg) {}\n    void vararg2(@A String @C []"
+        },
+        {
+          "line": 133,
+          "type": "ERROR",
+          "missing": false,
+          "text": "void vararg3(@A String    [] @B ... arg) {}\n    void vararg4(   String    [] @B ... arg) {}\n\n    @Target({ElementType.TYPE_USE, ElementType.TYPE_PARAMETER})\n   "
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/typeAnnotations/classfile/Patterns.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 356,
+          "type": "ERROR",
+          "missing": false,
+          "text": "@"
+        },
+        {
+          "line": 356,
+          "type": "ERROR",
+          "missing": false,
+          "text": "s"
+        },
+        {
+          "line": 357,
+          "type": "ERROR",
+          "missing": false,
+          "text": "B1m = o instanceof R(@A @A String s) && s."
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/typeAnnotations/failures/AnnotatedClassExpr.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 12,
+          "type": "ERROR",
+          "missing": false,
+          "text": "o1 = @A int"
+        },
+        {
+          "line": 13,
+          "type": "ERROR",
+          "missing": false,
+          "text": "= @A int []"
+        },
+        {
+          "line": 17,
+          "type": "ERROR",
+          "missing": false,
+          "text": "= @A AnnotatedClassExpr @A []"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/typeAnnotations/failures/AnnotatedImport.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 10,
+          "type": "ERROR",
+          "missing": false,
+          "text": "import java.@A util.List"
+        },
+        {
+          "line": 11,
+          "type": "ERROR",
+          "missing": false,
+          "text": "import @A java.util.Map"
+        },
+        {
+          "line": 12,
+          "type": "ERROR",
+          "missing": false,
+          "text": "import java.util.@A HashMap"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/typeAnnotations/failures/AnnotatedMethodSelectorTest.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 12,
+          "type": "ERROR",
+          "missing": false,
+          "text": "java.util.@A Arrays.stream"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/typeAnnotations/failures/AnnotatedPackage1.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 9,
+          "type": "ERROR",
+          "missing": false,
+          "text": "package name.@A p1.p2"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/typeAnnotations/failures/AnnotatedPackage2.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 9,
+          "type": "ERROR",
+          "missing": false,
+          "text": "package @A p1.p2"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/typeAnnotations/failures/BadCast.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 12,
+          "type": "type_identifier",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/typeAnnotations/failures/IncompleteArray.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 11,
+          "type": "ERROR",
+          "missing": false,
+          "text": "@A"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/typeAnnotations/failures/IndexArray.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 12,
+          "type": "ERROR",
+          "missing": false,
+          "text": "= var @A [1]"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/typeAnnotations/failures/OldArray.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 12,
+          "type": "ERROR",
+          "missing": false,
+          "text": "String [@A]  s()"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/typeAnnotations/failures/StaticFields.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 14,
+          "type": "identifier",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 17,
+          "type": "ERROR",
+          "missing": false,
+          "text": "= @A C.f"
+        },
+        {
+          "line": 19,
+          "type": "ERROR",
+          "missing": false,
+          "text": "@A C.f"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/typeAnnotations/failures/target/DotClass.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 24,
+          "type": "ERROR",
+          "missing": false,
+          "text": "= @A Object.class"
+        },
+        {
+          "line": 27,
+          "type": "ERROR",
+          "missing": false,
+          "text": "= @A String.class"
+        },
+        {
+          "line": 29,
+          "type": "ERROR",
+          "missing": false,
+          "text": "= @A String.class"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/typeAnnotations/failures/target/IncompleteArray.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 9,
+          "type": "ERROR",
+          "missing": false,
+          "text": "@A"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/typeAnnotations/newlocations/BasicTest.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 78,
+          "type": "ERROR",
+          "missing": false,
+          "text": "@B Object @A... objs"
+        },
+        {
+          "line": 80,
+          "type": "ERROR",
+          "missing": false,
+          "text": "@B Class<@C ?> @A ... clz"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/typeAnnotations/newlocations/ExceptionParameters.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 57,
+          "type": "ERROR",
+          "missing": false,
+          "text": "@"
+        },
+        {
+          "line": 57,
+          "type": "ERROR",
+          "missing": false,
+          "text": "e"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/typeAnnotations/newlocations/MultiCatch.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 38,
+          "type": "ERROR",
+          "missing": false,
+          "text": "@"
+        },
+        {
+          "line": 38,
+          "type": "ERROR",
+          "missing": false,
+          "text": "e"
+        },
+        {
+          "line": 58,
+          "type": "ERROR",
+          "missing": false,
+          "text": "@"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/annotations/typeAnnotations/newlocations/Varargs.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 39,
+          "type": "ERROR",
+          "missing": false,
+          "text": "Object @A... objs"
+        },
+        {
+          "line": 43,
+          "type": "ERROR",
+          "missing": false,
+          "text": "Class<?> @A ... clz"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/api/T6265137a.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 24,
+          "type": "ERROR",
+          "missing": false,
+          "text": "class"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/api/TestGetElementReferenceDataWithErrors.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 31,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 32,
+          "type": "ERROR",
+          "missing": false,
+          "text": "super"
+        },
+        {
+          "line": 33,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/AnnotationMissingElementValue.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 26,
+          "type": "ERROR",
+          "missing": false,
+          "text": "0"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/AnnotationMustBeNameValue.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 32,
+          "type": "ERROR",
+          "missing": false,
+          "text": "name == \"fred\","
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/ArrayAndReceiver.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 27,
+          "type": ")",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 27,
+          "type": "ERROR",
+          "missing": false,
+          "text": ")"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/ArrayDimMissing.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 27,
+          "type": "ERROR",
+          "missing": false,
+          "text": "= new int[]"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/CallMustBeFirst.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 29,
+          "type": "ERROR",
+          "missing": false,
+          "text": "super()"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/CannotCreateArrayWithTypeArgs.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 27,
+          "type": "ERROR",
+          "missing": false,
+          "text": "= new<Integer> Object[3]"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/CantAssignToThis.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 28,
+          "type": "ERROR",
+          "missing": false,
+          "text": "this ="
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/CantExtendIntfAnno.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 28,
+          "type": "ERROR",
+          "missing": false,
+          "text": "extends Anno"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/CatchWithoutTry.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 28,
+          "type": "ERROR",
+          "missing": false,
+          "text": "Exception"
+        },
+        {
+          "line": 28,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/DefaultAllowedInIntfAnnotationMember.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 27,
+          "type": "ERROR",
+          "missing": false,
+          "text": "default \"\""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/DotClassExpected.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 27,
+          "type": "ERROR",
+          "missing": false,
+          "text": "int[]"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/ElseWithoutIf.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 28,
+          "type": "ERROR",
+          "missing": false,
+          "text": "else"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/EmptyCharLiteral.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 27,
+          "type": "ERROR",
+          "missing": false,
+          "text": "char c = '';"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/EnumConstantExpected.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 28,
+          "type": "ERROR",
+          "missing": false,
+          "text": "void"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/EnumConstantNotExpected.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 28,
+          "type": "ERROR",
+          "missing": false,
+          "text": "A"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/EnumsCantBeGeneric.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 27,
+          "type": "ERROR",
+          "missing": false,
+          "text": "public enum E<T>"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/Expected2.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 30,
+          "type": "ERROR",
+          "missing": false,
+          "text": "new x1"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/ExpectedModule.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 26,
+          "type": "ERROR",
+          "missing": false,
+          "text": "open"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/ExplicitImplicitLambda.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 30,
+          "type": "identifier",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/FinallyWithoutTry.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 28,
+          "type": "ERROR",
+          "missing": false,
+          "text": "finally"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/ForeachBadInitialization.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 29,
+          "type": "ERROR",
+          "missing": false,
+          "text": "for (a : s)"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/IdentifierExpected.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 30,
+          "type": "ERROR",
+          "missing": false,
+          "text": "class"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/IllegalArrayCreation.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 27,
+          "type": "ERROR",
+          "missing": false,
+          "text": "new int[10]"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/IllegalChar.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 27,
+          "type": "ERROR",
+          "missing": false,
+          "text": "= #"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/IllegalDot.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 27,
+          "type": "ERROR",
+          "missing": false,
+          "text": "."
+        },
+        {
+          "line": 27,
+          "type": "identifier",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/IllegalLineEndInCharLit.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 27,
+          "type": "ERROR",
+          "missing": false,
+          "text": "char c = '\n';"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/IllegalNonAsciiDigit.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 27,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\u0660"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/IllegalStartOfExpr.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 27,
+          "type": "ERROR",
+          "missing": false,
+          "text": "="
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/IllegalStartOfStmt.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 29,
+          "type": "ERROR",
+          "missing": false,
+          "text": "if (true) }"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/IllegalStartOfType.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 27,
+          "type": "ERROR",
+          "missing": false,
+          "text": ","
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/IllegalUnderscore.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 27,
+          "type": "ERROR",
+          "missing": false,
+          "text": "_"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/IllegalUnicodeEscape.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 27,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/IncorrectRecordDeclaration.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 27,
+          "type": "ERROR",
+          "missing": false,
+          "text": "record R"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/InitializerNotAllowed.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 26,
+          "type": "}",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 30,
+          "type": "ERROR",
+          "missing": false,
+          "text": "}"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/IntfAnnotationCantHaveTypeParams.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 26,
+          "type": "ERROR",
+          "missing": false,
+          "text": "@interface X<T>"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/IntfAnnotationsCantHaveParams.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 27,
+          "type": "ERROR",
+          "missing": false,
+          "text": "int i"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/IntfAnnotationsCantHaveTypeParams.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 26,
+          "type": "}",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 28,
+          "type": "ERROR",
+          "missing": false,
+          "text": "}"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/InvalidBinaryNumber.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 27,
+          "type": "ERROR",
+          "missing": false,
+          "text": "0"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/InvalidHexNumber.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 28,
+          "type": "ERROR",
+          "missing": false,
+          "text": "0"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/InvalidModuleDirective/module-info.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 27,
+          "type": "}",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 28,
+          "type": "ERROR",
+          "missing": false,
+          "text": "javax.interceptor.javax.interceptor."
+        },
+        {
+          "line": 29,
+          "type": "ERROR",
+          "missing": false,
+          "text": "}"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/MalformedFpLit.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 28,
+          "type": "ERROR",
+          "missing": false,
+          "text": "e*"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/NoAnnotationsOnDotClass.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 30,
+          "type": "ERROR",
+          "missing": false,
+          "text": "= @A Object.class"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/Orphaned.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 28,
+          "type": "ERROR",
+          "missing": false,
+          "text": "3"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/PrematureEOF.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 26,
+          "type": "}",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/ProcessorWrongType/ProcessorWrongType.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 27,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/RecordPatternsAnnotationsNotAllowed.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 29,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 29,
+          "type": "ERROR",
+          "missing": false,
+          "text": "(String s)"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/StringTemplateUnclosedString.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 35,
+          "type": "}",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/StringTemplateUnclosedTextBlock.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 38,
+          "type": "}",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/SwitchMixingCaseTypes.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 31,
+          "type": "ERROR",
+          "missing": false,
+          "text": "1 ->"
+        },
+        {
+          "line": 31,
+          "type": ":",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/TextBlockCloseDelimiter.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 26,
+          "type": "ERROR",
+          "missing": false,
+          "text": "class TextBlockCloseDelimiter {\n    String m() {\n        return \"\"\"\n               ;\n    }\n}\n"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/ThrowsNotAllowedInAnno.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 27,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/TryWithResourcesExprNeedsVar.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 28,
+          "type": "ERROR",
+          "missing": false,
+          "text": "try (new CloseableImpl()) {"
+        },
+        {
+          "line": 31,
+          "type": "ERROR",
+          "missing": false,
+          "text": "}"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/TryWithoutCatchOrFinallyOrResource.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 28,
+          "type": "ERROR",
+          "missing": false,
+          "text": "try {\n        }"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/UnclosedCharLiteral.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 27,
+          "type": "ERROR",
+          "missing": false,
+          "text": "char c = 'a;"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/UnclosedComment.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 28,
+          "type": "ERROR",
+          "missing": false,
+          "text": "/*"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/UnclosedStringLiteral.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 26,
+          "type": "ERROR",
+          "missing": false,
+          "text": "class UnclosedStringLit {\n    String s = \"abc;\n}\n"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/UnexpectedTokenInModuleInfo/module-info.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 26,
+          "type": "ERROR",
+          "missing": false,
+          "text": "weak module m"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/VarAllOrNothing.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 30,
+          "type": "ERROR",
+          "missing": false,
+          "text": "y"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/VarInImplicitLambda.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 31,
+          "type": "identifier",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/WithExpected/module-info.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 27,
+          "type": "ERROR",
+          "missing": false,
+          "text": "provides p.C;"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/diags/examples/WrongReceiver.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 28,
+          "type": "ERROR",
+          "missing": false,
+          "text": "WrongReceiver wr.wr"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/enum/EnumMembersOrder.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 11,
+          "type": "ERROR",
+          "missing": false,
+          "text": "Days(String d) { day = d; }"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/failover/FailOver01.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 10,
+          "type": "ERROR",
+          "missing": false,
+          "text": "x = \"\""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/failover/FailOver15.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 17,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/generics/6413682/T6413682.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 10,
+          "type": "ERROR",
+          "missing": false,
+          "text": "= new\n<Wow,thanks.Mr<List>,and.thanks.Mr<Javac>.Vince>Object[5]"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/generics/T6751514.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 52,
+          "type": "ERROR",
+          "missing": false,
+          "text": "="
+        },
+        {
+          "line": 56,
+          "type": "ERROR",
+          "missing": false,
+          "text": "="
+        },
+        {
+          "line": 62,
+          "type": "ERROR",
+          "missing": false,
+          "text": "="
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/incompleteStatements/T8000484.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 10,
+          "type": "ERROR",
+          "missing": false,
+          "text": "Exception"
+        },
+        {
+          "line": 10,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 11,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/lambda/8131742/T8131742.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 16,
+          "type": "identifier",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/lambda/IdentifierTest.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 72,
+          "type": "ERROR",
+          "missing": false,
+          "text": "void _ ()"
+        },
+        {
+          "line": 129,
+          "type": "ERROR",
+          "missing": false,
+          "text": "()"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/lambda/UnderscoreAsIdent.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 12,
+          "type": "ERROR",
+          "missing": false,
+          "text": "class _ {\n    String _ = null;\n    void _(String _)"
+        },
+        {
+          "line": 34,
+          "type": "ERROR",
+          "missing": false,
+          "text": "}"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/lambda/funcInterfaces/LambdaTest1_neg1.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 13,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/lambda/lambdaExpression/InvalidExpression1.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 15,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/literals/BadBinaryLiterals.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 10,
+          "type": "ERROR",
+          "missing": false,
+          "text": "2"
+        },
+        {
+          "line": 15,
+          "type": "ERROR",
+          "missing": false,
+          "text": ".01"
+        },
+        {
+          "line": 16,
+          "type": "ERROR",
+          "missing": false,
+          "text": "e01"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/literals/BadUnderscoreLiterals.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 14,
+          "type": "ERROR",
+          "missing": false,
+          "text": "_"
+        },
+        {
+          "line": 18,
+          "type": "ERROR",
+          "missing": false,
+          "text": "_"
+        },
+        {
+          "line": 21,
+          "type": "ERROR",
+          "missing": false,
+          "text": "0"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/literals/T6891079.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 8,
+          "type": "ERROR",
+          "missing": false,
+          "text": "B"
+        },
+        {
+          "line": 9,
+          "type": "ERROR",
+          "missing": false,
+          "text": "0"
+        },
+        {
+          "line": 10,
+          "type": "ERROR",
+          "missing": false,
+          "text": "X"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/literals/UnderscoreLiterals.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 41,
+          "type": "ERROR",
+          "missing": false,
+          "text": "1"
+        },
+        {
+          "line": 43,
+          "type": "ERROR",
+          "missing": false,
+          "text": "1"
+        },
+        {
+          "line": 56,
+          "type": "ERROR",
+          "missing": false,
+          "text": "1"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/modules/InvalidModuleDirective/module-info.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 9,
+          "type": "}",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 10,
+          "type": "ERROR",
+          "missing": false,
+          "text": "javax.interceptor.javax.interceptor."
+        },
+        {
+          "line": 11,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/parser/7157165/T7157165.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 11,
+          "type": "ERROR",
+          "missing": false,
+          "text": "|B"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/parser/ErroneousParameters.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 11,
+          "type": "ERROR",
+          "missing": false,
+          "text": "..."
+        },
+        {
+          "line": 12,
+          "type": "ERROR",
+          "missing": false,
+          "text": ","
+        },
+        {
+          "line": 13,
+          "type": "ERROR",
+          "missing": false,
+          "text": "["
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/parser/MissingClosingBrace.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 13,
+          "type": "}",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 13,
+          "type": "}",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/parser/SingleCommaAnnotationValueFail.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 11,
+          "type": "ERROR",
+          "missing": false,
+          "text": "0"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/parser/T4881269.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 9,
+          "type": "ERROR",
+          "missing": false,
+          "text": "."
+        },
+        {
+          "line": 10,
+          "type": "ERROR",
+          "missing": false,
+          "text": "System.err..println()"
+        },
+        {
+          "line": 11,
+          "type": "ERROR",
+          "missing": false,
+          "text": "."
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/patterns/AnnotationErrors.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 14,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 14,
+          "type": "ERROR",
+          "missing": false,
+          "text": "(var s)"
+        },
+        {
+          "line": 15,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/patterns/DeconstructionPatternErrors.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 46,
+          "type": "ERROR",
+          "missing": false,
+          "text": "p"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/patterns/NoModifiersOnBinding.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 16,
+          "type": "ERROR",
+          "missing": false,
+          "text": "s"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/patterns/Parenthesized.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 38,
+          "type": "ERROR",
+          "missing": false,
+          "text": "(String s) when"
+        },
+        {
+          "line": 42,
+          "type": "ERROR",
+          "missing": false,
+          "text": "(String s) when"
+        },
+        {
+          "line": 45,
+          "type": "identifier",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/patterns/PatternCaseErrorRecovery.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 13,
+          "type": "ERROR",
+          "missing": false,
+          "text": "t"
+        },
+        {
+          "line": 14,
+          "type": "ERROR",
+          "missing": false,
+          "text": "e"
+        },
+        {
+          "line": 15,
+          "type": "ERROR",
+          "missing": false,
+          "text": "e"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/patterns/PatternErrorRecovery.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 17,
+          "type": "ERROR",
+          "missing": false,
+          "text": ","
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/patterns/SwitchErrors.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 88,
+          "type": "ERROR",
+          "missing": false,
+          "text": "String s,"
+        },
+        {
+          "line": 138,
+          "type": "ERROR",
+          "missing": false,
+          "text": ", default"
+        },
+        {
+          "line": 149,
+          "type": "ERROR",
+          "missing": false,
+          "text": "s"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/patterns/Switches.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 192,
+          "type": "ERROR",
+          "missing": false,
+          "text": "case @Deprecated CharSequence s -> { yield 2 * Integer.parseInt(s.toString()); }"
+        },
+        {
+          "line": 193,
+          "type": "ERROR",
+          "missing": false,
+          "text": "i"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/patterns/T8309054.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 12,
+          "type": "ERROR",
+          "missing": false,
+          "text": "[]"
+        },
+        {
+          "line": 15,
+          "type": "ERROR",
+          "missing": false,
+          "text": "boolean t2 = switch (obj) {\n            case Double a[][][][] ->"
+        },
+        {
+          "line": 17,
+          "type": "ERROR",
+          "missing": false,
+          "text": "default ->"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/patterns/T8314226.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 68,
+          "type": "ERROR",
+          "missing": false,
+          "text": "Integer _,"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/patterns/T8314632.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 12,
+          "type": "ERROR",
+          "missing": false,
+          "text": "Integer _, CharSequence _,"
+        },
+        {
+          "line": 20,
+          "type": "ERROR",
+          "missing": false,
+          "text": "Integer _, CharSequence _,"
+        },
+        {
+          "line": 27,
+          "type": "ERROR",
+          "missing": false,
+          "text": "Float _,"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/patterns/T8317300.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 13,
+          "type": "ERROR",
+          "missing": false,
+          "text": "final Foo"
+        },
+        {
+          "line": 14,
+          "type": "ERROR",
+          "missing": false,
+          "text": "default"
+        },
+        {
+          "line": 20,
+          "type": "ERROR",
+          "missing": false,
+          "text": "final Foo(int x)"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/patterns/T8320145.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 36,
+          "type": "ERROR",
+          "missing": false,
+          "text": "s"
+        },
+        {
+          "line": 37,
+          "type": "ERROR",
+          "missing": false,
+          "text": "s"
+        },
+        {
+          "line": 38,
+          "type": "ERROR",
+          "missing": false,
+          "text": "s2"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/patterns/Unnamed.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 126,
+          "type": "ERROR",
+          "missing": false,
+          "text": "R1 _,"
+        },
+        {
+          "line": 134,
+          "type": "ERROR",
+          "missing": false,
+          "text": "R2 _, R3 _,"
+        },
+        {
+          "line": 140,
+          "type": "ERROR",
+          "missing": false,
+          "text": "Box(R1 _),"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/patterns/UnnamedErrors.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 45,
+          "type": "ERROR",
+          "missing": false,
+          "text": "Integer _,"
+        },
+        {
+          "line": 54,
+          "type": "ERROR",
+          "missing": false,
+          "text": "Integer i,"
+        },
+        {
+          "line": 61,
+          "type": "ERROR",
+          "missing": false,
+          "text": "Integer _,"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/policy/test3/A.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 7,
+          "type": "ERROR",
+          "missing": false,
+          "text": "System"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/processing/6994946/SyntaxErrorTest.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 14,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/processing/errors/TestParseErrors/ParseErrors.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 15,
+          "type": "ERROR",
+          "missing": false,
+          "text": "public void m3(testclass<String>,"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/quid/T6999438.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 7,
+          "type": "ERROR",
+          "missing": false,
+          "text": "class Test {\n    int #"
+        },
+        {
+          "line": 9,
+          "type": "ERROR",
+          "missing": false,
+          "text": "}"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/rawDiags/Error.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 7,
+          "type": "ERROR",
+          "missing": false,
+          "text": "class Error\n{\n    static void error"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/records/RecordDeclarationSyntaxTest.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 9,
+          "type": "ERROR",
+          "missing": false,
+          "text": "record R"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/switchexpr/ParserRecovery.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 10,
+          "type": ":",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 13,
+          "type": ":",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/switchexpr/WarnWrongYieldTest.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 141,
+          "type": "ERROR",
+          "missing": false,
+          "text": "y"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/switchexpr/WrongYieldTest.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 204,
+          "type": "ERROR",
+          "missing": false,
+          "text": "y"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/switchextra/SwitchArrowBrokenConstant.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 13,
+          "type": ":",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 16,
+          "type": ":",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 19,
+          "type": ":",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/switchextra/SwitchStatementBroken.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 13,
+          "type": "ERROR",
+          "missing": false,
+          "text": "switch (i) {\n            case 0 -> { res = \"NULL-A\"; }\n            case 1: {"
+        },
+        {
+          "line": 16,
+          "type": "ERROR",
+          "missing": false,
+          "text": "2:"
+        },
+        {
+          "line": 17,
+          "type": "ERROR",
+          "missing": false,
+          "text": "default ->"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/switchextra/SwitchStatementBroken2.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 17,
+          "type": "ERROR",
+          "missing": false,
+          "text": "if  (j < 0)"
+        },
+        {
+          "line": 17,
+          "type": "ERROR",
+          "missing": false,
+          "text": "else res = \"B\";"
+        },
+        {
+          "line": 18,
+          "type": "ERROR",
+          "missing": false,
+          "text": "while (j-- > 0)"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/unicode/FirstChar2.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 24,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\u0070ublic class FirstChar2"
+        },
+        {
+          "line": 25,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 25,
+          "type": "ERROR",
+          "missing": false,
+          "text": "(String[] args)"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/unicode/NonasciiDigit.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 12,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\"
+        },
+        {
+          "line": 13,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\uff11"
+        },
+        {
+          "line": 14,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/unicode/SupplementaryJavaID1.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 39,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\ud801\\udc00"
+        },
+        {
+          "line": 40,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\ud802\\udc00"
+        },
+        {
+          "line": 41,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\ud801\\udc01"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/unicode/SupplementaryJavaID2.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 12,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\ud801\\ud801"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/unicode/SupplementaryJavaID3.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 12,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\ud801\\ud801"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/unicode/SupplementaryJavaID4.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 14,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\"
+        },
+        {
+          "line": 14,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\udd7b"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/unicode/SupplementaryJavaID5.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 14,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\ud834\\udd00"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/unicode/SupplementaryJavaID6.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 40,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\"
+        },
+        {
+          "line": 40,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\udc00"
+        },
+        {
+          "line": 40,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/unicode/TripleQuote.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 13,
+          "type": "ERROR",
+          "missing": false,
+          "text": "char d = ''';"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/unicode/UnicodeAtEOL.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 33,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\"
+        },
+        {
+          "line": 37,
+          "type": "ERROR",
+          "missing": false,
+          "text": "b"
+        },
+        {
+          "line": 37,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/unicode/UnicodeCommentDelimiter.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 44,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\"
+        },
+        {
+          "line": 44,
+          "type": "ERROR",
+          "missing": false,
+          "text": "\\u002f xyzzy"
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/unnamed/UnnamedClassRecovery.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 7,
+          "type": ";",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    },
+    {
+      "file": "test/langtools/tools/javac/var_implicit_lambda/VarInImplicitLambdaNegTest01.java",
+      "language": "java",
+      "error": "syntax error in source",
+      "diagnostics": [
+        {
+          "line": 12,
+          "type": "ERROR",
+          "missing": false,
+          "text": "y"
+        },
+        {
+          "line": 13,
+          "type": "identifier",
+          "missing": true,
+          "text": ""
+        },
+        {
+          "line": 15,
+          "type": "identifier",
+          "missing": true,
+          "text": ""
+        }
+      ],
+      "groovy_text_normalized": false
+    }
+  ]
+}

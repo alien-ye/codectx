@@ -1,0 +1,370 @@
+
+### D1 What happens when a QuerySet is indexed or sliced using a negative bound? What happens to a slice that specifies a step?
+django/db/models/query.py 499 534
+499:     def __getitem__(self, k):
+500:         """Retrieve an item or slice from the set of results."""
+501:         if not isinstance(k, (int, slice)):
+502:             raise TypeError(
+503:                 "QuerySet indices must be integers or slices, not %s."
+504:                 % type(k).__name__
+505:             )
+506:         if (isinstance(k, int) and k < 0) or (
+507:             isinstance(k, slice)
+508:             and (
+509:                 (k.start is not None and k.start < 0)
+510:                 or (k.stop is not None and k.stop < 0)
+511:             )
+512:         ):
+513:             raise ValueError("Negative indexing is not supported.")
+514: 
+515:         if self._result_cache is not None:
+516:             return self._result_cache[k]
+517: 
+518:         if isinstance(k, slice):
+519:             qs = self._chain()
+520:             if k.start is not None:
+521:                 start = int(k.start)
+522:             else:
+523:                 start = None
+524:             if k.stop is not None:
+525:                 stop = int(k.stop)
+526:             else:
+527:                 stop = None
+528:             qs.query.set_limits(start, stop)
+529:             return list(qs)[:: k.step] if k.step else qs
+530: 
+531:         qs = self._chain()
+532:         qs.query.set_limits(k, k + 1)
+533:         qs._fetch_all()
+534:         return qs._result_cache[0]
+
+### D2 How does BaseCache.get_backend_timeout handle DEFAULT_TIMEOUT, None, and a timeout of zero?
+django/core/cache/backends/base.py 87 97
+87:     def get_backend_timeout(self, timeout=DEFAULT_TIMEOUT):
+88:         """
+89:         Return the timeout value usable by this backend based upon the provided
+90:         timeout.
+91:         """
+92:         if timeout == DEFAULT_TIMEOUT:
+93:             timeout = self.default_timeout
+94:         elif timeout == 0:
+95:             # ticket 21147 - avoid time.time() related precision issues
+96:             timeout = -1
+97:         return None if timeout is None else time.time() + timeout
+
+### L1 In RunnableSequence.invoke, which step receives extra caller keyword arguments, and what happens to callbacks and the exception if a step fails?
+libs/core/langchain_core/runnables/base.py 3455 3488
+3455:     def invoke(
+3456:         self, input: Input, config: RunnableConfig | None = None, **kwargs: Any
+3457:     ) -> Output:
+3458:         # setup callbacks and context
+3459:         config = ensure_config(config)
+3460:         callback_manager = get_callback_manager_for_config(config)
+3461:         # start the root run
+3462:         run_manager = callback_manager.on_chain_start(
+3463:             None,
+3464:             input,
+3465:             name=config.get("run_name") or self.get_name(),
+3466:             run_id=config.pop("run_id", None),
+3467:         )
+3468:         input_ = input
+3469: 
+3470:         # invoke all steps in sequence
+3471:         try:
+3472:             for i, step in enumerate(self.steps):
+3473:                 # mark each step as a child run
+3474:                 config = patch_config(
+3475:                     config, callbacks=run_manager.get_child(f"seq:step:{i + 1}")
+3476:                 )
+3477:                 with set_config_context(config) as context:
+3478:                     if i == 0:
+3479:                         input_ = context.run(step.invoke, input_, config, **kwargs)
+3480:                     else:
+3481:                         input_ = context.run(step.invoke, input_, config)
+3482:         # finish the root run
+3483:         except BaseException as e:
+3484:             run_manager.on_chain_error(e)
+3485:             raise
+3486:         else:
+3487:             run_manager.on_chain_end(input_)
+3488:             return cast("Output", input_)
+
+### L2 In BaseRetriever.invoke, which lifecycle callback runs on failure, which runs on success, and is a retrieval exception returned or re-raised?
+libs/core/langchain_core/retrievers.py 179 234
+179:     def invoke(
+180:         self, input: str, config: RunnableConfig | None = None, **kwargs: Any
+181:     ) -> list[Document]:
+182:         """Invoke the retriever to get relevant documents.
+183: 
+184:         Main entry point for synchronous retriever invocations.
+185: 
+186:         Args:
+187:             input: The query string.
+188:             config: Configuration for the retriever.
+189:             **kwargs: Additional arguments to pass to the retriever.
+190: 
+191:         Returns:
+192:             List of relevant documents.
+193: 
+194:         Examples:
+195:         ```python
+196:         retriever.invoke("query")
+197:         ```
+198:         """
+199:         config = ensure_config(config)
+200:         inheritable_metadata = {
+201:             **(config.get("metadata") or {}),
+202:             **self._get_ls_params(**kwargs),
+203:         }
+204:         callback_manager = CallbackManager.configure(
+205:             config.get("callbacks"),
+206:             None,
+207:             verbose=kwargs.get("verbose", False),
+208:             inheritable_tags=config.get("tags"),
+209:             local_tags=self.tags,
+210:             inheritable_metadata=inheritable_metadata,
+211:             local_metadata=self.metadata,
+212:         )
+213:         run_manager = callback_manager.on_retriever_start(
+214:             None,
+215:             input,
+216:             name=config.get("run_name") or self.get_name(),
+217:             run_id=kwargs.pop("run_id", None),
+218:         )
+219:         try:
+220:             kwargs_ = kwargs if self._expects_other_args else {}
+221:             if self._new_arg_supported:
+222:                 result = self._get_relevant_documents(
+223:                     input, run_manager=run_manager, **kwargs_
+224:                 )
+225:             else:
+226:                 result = self._get_relevant_documents(input, **kwargs_)
+227:         except Exception as e:
+228:             run_manager.on_retriever_error(e)
+229:             raise
+230:         else:
+231:             run_manager.on_retriever_end(
+232:                 result,
+233:             )
+234:             return result
+
+### S1 Does SpringApplication.setAdditionalProfiles replace or append to its existing set, what happens to duplicates, and how is a null profiles array handled?
+core/spring-boot/src/main/java/org/springframework/boot/SpringApplication.java 1095 1097
+1095: 	public void setAdditionalProfiles(String... profiles) {
+1096: 		this.additionalProfiles = Collections.unmodifiableSet(new LinkedHashSet<>(Arrays.asList(profiles)));
+1097: 	}
+
+### S2 Before any availability state has been recorded, what do ApplicationAvailabilityBean.getLivenessState and getReadinessState return?
+core/spring-boot/src/main/java/org/springframework/boot/availability/ApplicationAvailability.java 29 31
+29: 	default LivenessState getLivenessState() {
+30: 		return getState(LivenessState.class, LivenessState.BROKEN);
+31: 	}
+core/spring-boot/src/main/java/org/springframework/boot/availability/ApplicationAvailability.java 37 39
+37: 	default ReadinessState getReadinessState() {
+38: 		return getState(ReadinessState.class, ReadinessState.REFUSING_TRAFFIC);
+39: 	}
+core/spring-boot/src/main/java/org/springframework/boot/availability/ApplicationAvailabilityBean.java 42 48
+42: 	@Override
+43: 	public <S extends AvailabilityState> S getState(Class<S> stateType, S defaultState) {
+44: 		Assert.notNull(stateType, "'stateType' must not be null");
+45: 		Assert.notNull(defaultState, "'defaultState' must not be null");
+46: 		S state = getState(stateType);
+47: 		return (state != null) ? state : defaultState;
+48: 	}
+core/spring-boot/src/main/java/org/springframework/boot/availability/ApplicationAvailabilityBean.java 50 54
+50: 	@Override
+51: 	public <S extends AvailabilityState> @Nullable S getState(Class<S> stateType) {
+52: 		AvailabilityChangeEvent<S> event = getLastChangeEvent(stateType);
+53: 		return (event != null) ? event.getState() : null;
+54: 	}
+
+### K1 In KafkaProducer.partition, how are an explicit record partition, a configured custom partitioner, and a serialized key handled? What changes when partitioner.ignore.keys is enabled?
+clients/src/main/java/org/apache/kafka/clients/producer/KafkaProducer.java 1686 1706
+1686:     private int partition(ProducerRecord<K, V> record, byte[] serializedKey, byte[] serializedValue, Cluster cluster) {
+1687:         if (record.partition() != null)
+1688:             return record.partition();
+1689: 
+1690:         if (partitionerPlugin.get() != null) {
+1691:             int customPartition = partitionerPlugin.get().partition(
+1692:                 record.topic(), record.key(), serializedKey, record.value(), serializedValue, cluster);
+1693:             if (customPartition < 0) {
+1694:                 throw new IllegalArgumentException(String.format(
+1695:                     "The partitioner generated an invalid partition number: %d. Partition number should always be non-negative.", customPartition));
+1696:             }
+1697:             return customPartition;
+1698:         }
+1699: 
+1700:         if (serializedKey != null && !partitionerIgnoreKeys) {
+1701:             // hash the keyBytes to choose a partition
+1702:             return BuiltInPartitioner.partitionForKey(serializedKey, cluster.partitionsForTopic(record.topic()).size());
+1703:         } else {
+1704:             return RecordMetadata.UNKNOWN_PARTITION;
+1705:         }
+1706:     }
+
+### K2 When RecordAccumulator is closed, how are threads waiting for buffer memory awakened? Identify the call into the buffer pool and the operation that wakes waiters.
+clients/src/main/java/org/apache/kafka/clients/producer/internals/RecordAccumulator.java 1335 1338
+1335:     public void close() {
+1336:         this.closed = true;
+1337:         this.free.close();
+1338:     }
+clients/src/main/java/org/apache/kafka/clients/producer/internals/BufferPool.java 575 584
+575:     public void close() {
+576:         this.lock.lock();
+577:         this.closed = true;
+578:         try {
+579:             for (Condition waiter : this.waiters)
+580:                 waiter.signal();
+581:         } finally {
+582:             this.lock.unlock();
+583:         }
+584:     }
+
+### J1 In HashMap.computeIfAbsent, what happens for an existing non-null value, for a null mapping-function result, and when the mapping function structurally modifies the map?
+src/java.base/share/classes/java/util/HashMap.java 1194 1248
+1194:     @Override
+1195:     public V computeIfAbsent(K key,
+1196:                              Function<? super K, ? extends V> mappingFunction) {
+1197:         if (mappingFunction == null)
+1198:             throw new NullPointerException();
+1199:         int hash = hash(key);
+1200:         Node<K,V>[] tab; Node<K,V> first; int n, i;
+1201:         int binCount = 0;
+1202:         TreeNode<K,V> t = null;
+1203:         Node<K,V> old = null;
+1204:         if (size > threshold || (tab = table) == null ||
+1205:             (n = tab.length) == 0)
+1206:             n = (tab = resize()).length;
+1207:         if ((first = tab[i = (n - 1) & hash]) != null) {
+1208:             if (first instanceof TreeNode)
+1209:                 old = (t = (TreeNode<K,V>)first).getTreeNode(hash, key);
+1210:             else {
+1211:                 Node<K,V> e = first; K k;
+1212:                 do {
+1213:                     if (e.hash == hash &&
+1214:                         ((k = e.key) == key || (key != null && key.equals(k)))) {
+1215:                         old = e;
+1216:                         break;
+1217:                     }
+1218:                     ++binCount;
+1219:                 } while ((e = e.next) != null);
+1220:             }
+1221:             V oldValue;
+1222:             if (old != null && (oldValue = old.value) != null) {
+1223:                 afterNodeAccess(old);
+1224:                 return oldValue;
+1225:             }
+1226:         }
+1227:         int mc = modCount;
+1228:         V v = mappingFunction.apply(key);
+1229:         if (mc != modCount) { throw new ConcurrentModificationException(); }
+1230:         if (v == null) {
+1231:             return null;
+1232:         } else if (old != null) {
+1233:             old.value = v;
+1234:             afterNodeAccess(old);
+1235:             return v;
+1236:         }
+1237:         else if (t != null)
+1238:             t.putTreeVal(this, tab, hash, key, v);
+1239:         else {
+1240:             tab[i] = newNode(hash, key, v, first);
+1241:             if (binCount >= TREEIFY_THRESHOLD - 1)
+1242:                 treeifyBin(tab, hash);
+1243:         }
+1244:         modCount = mc + 1;
+1245:         ++size;
+1246:         afterNodeInsertion(true);
+1247:         return v;
+1248:     }
+
+### J2 In ConcurrentHashMap.computeIfAbsent, what happens for a null key or mapping function, for a null computed value, and for a detectably recursive update?
+src/java.base/share/classes/java/util/concurrent/ConcurrentHashMap.java 1691 1778
+1691:     public V computeIfAbsent(K key, Function<? super K, ? extends V> mappingFunction) {
+1692:         if (key == null || mappingFunction == null)
+1693:             throw new NullPointerException();
+1694:         int h = spread(key.hashCode());
+1695:         V val = null;
+1696:         int binCount = 0;
+1697:         for (Node<K,V>[] tab = table;;) {
+1698:             Node<K,V> f; int n, i, fh; K fk; V fv;
+1699:             if (tab == null || (n = tab.length) == 0)
+1700:                 tab = initTable();
+1701:             else if ((f = tabAt(tab, i = (n - 1) & h)) == null) {
+1702:                 Node<K,V> r = new ReservationNode<K,V>();
+1703:                 synchronized (r) {
+1704:                     if (casTabAt(tab, i, null, r)) {
+1705:                         binCount = 1;
+1706:                         Node<K,V> node = null;
+1707:                         try {
+1708:                             if ((val = mappingFunction.apply(key)) != null)
+1709:                                 node = new Node<K,V>(h, key, val);
+1710:                         } finally {
+1711:                             setTabAt(tab, i, node);
+1712:                         }
+1713:                     }
+1714:                 }
+1715:                 if (binCount != 0)
+1716:                     break;
+1717:             }
+1718:             else if ((fh = f.hash) == MOVED)
+1719:                 tab = helpTransfer(tab, f);
+1720:             else if (fh == h    // check first node without acquiring lock
+1721:                      && ((fk = f.key) == key || (fk != null && key.equals(fk)))
+1722:                      && (fv = f.val) != null)
+1723:                 return fv;
+1724:             else {
+1725:                 boolean added = false;
+1726:                 synchronized (f) {
+1727:                     if (tabAt(tab, i) == f) {
+1728:                         if (fh >= 0) {
+1729:                             binCount = 1;
+1730:                             for (Node<K,V> e = f;; ++binCount) {
+1731:                                 K ek;
+1732:                                 if (e.hash == h &&
+1733:                                     ((ek = e.key) == key ||
+1734:                                      (ek != null && key.equals(ek)))) {
+1735:                                     val = e.val;
+1736:                                     break;
+1737:                                 }
+1738:                                 Node<K,V> pred = e;
+1739:                                 if ((e = e.next) == null) {
+1740:                                     if ((val = mappingFunction.apply(key)) != null) {
+1741:                                         if (pred.next != null)
+1742:                                             throw new IllegalStateException("Recursive update");
+1743:                                         added = true;
+1744:                                         pred.next = new Node<K,V>(h, key, val);
+1745:                                     }
+1746:                                     break;
+1747:                                 }
+1748:                             }
+1749:                         }
+1750:                         else if (f instanceof TreeBin) {
+1751:                             binCount = 2;
+1752:                             TreeBin<K,V> t = (TreeBin<K,V>)f;
+1753:                             TreeNode<K,V> r, p;
+1754:                             if ((r = t.root) != null &&
+1755:                                 (p = r.findTreeNode(h, key, null)) != null)
+1756:                                 val = p.val;
+1757:                             else if ((val = mappingFunction.apply(key)) != null) {
+1758:                                 added = true;
+1759:                                 t.putTreeVal(h, key, val);
+1760:                             }
+1761:                         }
+1762:                         else if (f instanceof ReservationNode)
+1763:                             throw new IllegalStateException("Recursive update");
+1764:                     }
+1765:                 }
+1766:                 if (binCount != 0) {
+1767:                     if (binCount >= TREEIFY_THRESHOLD)
+1768:                         treeifyBin(tab, i);
+1769:                     if (!added)
+1770:                         return val;
+1771:                     break;
+1772:                 }
+1773:             }
+1774:         }
+1775:         if (val != null)
+1776:             addCount(1L, binCount);
+1777:         return val;
+1778:     }

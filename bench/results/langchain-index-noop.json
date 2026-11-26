@@ -1,0 +1,7 @@
+{
+  "repo": "langchain",
+  "run": "noop",
+  "seconds": 16.637759360000018,
+  "returncode": 0,
+  "stdout": "{\"total_files\": 3308, \"indexed_files\": 0, \"code_files\": 2672, \"skipped\": 0, \"reindexed\": 0, \"unchanged\": 3308, \"deleted\": 0, \"files_total\": 3308, \"files_by_language\": {\"unknown\": 636, \"python\": 2672}, \"symbols_total\": 27353, \"refs_total\": 89749, \"index\": \"/workspace/codectx/bench/results/indexes/langchain\"}\n"
+}

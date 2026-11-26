@@ -1,0 +1,26 @@
+{
+ "protocol": "Interactive assistant baseline, committed before new evidence collection. No repository context supplied for these answers. Prior training and earlier conversation may contain repository knowledge; not a blind independent model call. No sampling parameters, per-answer latency, or API token counts are available.",
+ "model": "current interactive Codex assistant",
+ "answers": {
+  "D1": {"answer":"Negative indexing and negative slice bounds are unsupported and raise ValueError. A stepped slice evaluates a limited queryset and applies the step to a Python list, so the result is a list rather than a QuerySet.","abstain":false,"citations":[]},
+  "D2": {"answer":"DEFAULT_TIMEOUT selects the backend's configured default. None means no expiry and remains None. Zero means immediate expiry; Django uses a timestamp in the past rather than a special non-expiring zero. Other numeric timeouts are added to the current time.","abstain":false,"citations":[]},
+  "D3": {"answer":"URLResolver in django/urls/resolvers.py handles nested URL resolution.","abstain":false,"citations":[]},
+  "D4": {"answer":"The repository does not reveal the current production deployment's effective cache timeout. Runtime settings or deployment configuration are required.","abstain":true,"citations":[]},
+  "L1": {"answer":"Extra keyword arguments go to the first step. Later steps receive the previous output and their config. A failure triggers on_chain_error, and the exception is re-raised rather than returned as a result.","abstain":false,"citations":[]},
+  "L2": {"answer":"A failure invokes on_retriever_error and re-raises the exception. A successful retrieval invokes on_retriever_end with the documents and returns them.","abstain":false,"citations":[]},
+  "L3": {"answer":"JsonOutputParser in libs/core/langchain_core/output_parsers/json.py parses JSON model output.","abstain":false,"citations":[]},
+  "L4": {"answer":"The deployment's database endpoint and credentials cannot be determined from a generic source checkout; deployment configuration or an operator-provided runtime snapshot is needed.","abstain":true,"citations":[]},
+  "S1": {"answer":"The setter replaces the collection with a LinkedHashSet made from the supplied profiles, removing duplicates while preserving encounter order. A null array is rejected with an assertion/IllegalArgumentException. This is an unverified recollection of the API, not a check of this checkout.","abstain":false,"citations":[]},
+  "S2": {"answer":"The initial liveness default is LivenessState.CORRECT; readiness defaults to ReadinessState.REFUSING_TRAFFIC until availability is updated.","abstain":false,"citations":[]},
+  "S3": {"answer":"AutoConfigurationImportSelector selects the auto-configurations. In recent modular layouts its source is core/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/AutoConfigurationImportSelector.java; that path is known from the earlier benchmark rather than newly retrieved evidence.","abstain":false,"citations":[]},
+  "S4": {"answer":"The public actuator URL and its credential depend on runtime deployment, routing, and security settings and cannot be supplied from this source checkout alone.","abstain":true,"citations":[]},
+  "K1": {"answer":"An explicit record partition wins. Otherwise a configured partitioner is called, and invalid negative results are rejected. With the built-in behavior, a serialized key normally supplies a hash-based partition unless ignore-keys is enabled; then records without an explicit partition are left to the accumulator's partitioning behavior. Exact helper calls and sentinels need source verification.","abstain":false,"citations":[]},
+  "K2": {"answer":"I expect RecordAccumulator.close to close its BufferPool, and BufferPool.close to signal all allocation waiters. I cannot verify the precise method calls or synchronization in this checkout without source evidence.","abstain":false,"citations":[]},
+  "K3": {"answer":"StreamsBuilder in streams/src/main/java/org/apache/kafka/streams/StreamsBuilder.java provides the high-level topology DSL.","abstain":false,"citations":[]},
+  "K4": {"answer":"The producer's effective broker addresses and SASL credentials are deployment inputs, not facts available from the public source checkout.","abstain":true,"citations":[]},
+  "J1": {"answer":"An existing non-null value is returned without applying the function. A null function result does not create a mapping. If the function structurally modifies the map and modCount changes during computation, ConcurrentModificationException is thrown.","abstain":false,"citations":[]},
+  "J2": {"answer":"A null key or null mapping function throws NullPointerException. A null computed value is not installed and is returned as null. A detectably recursive update can throw IllegalStateException, usually with the message Recursive update.","abstain":false,"citations":[]},
+  "J3": {"answer":"ForkJoinPool in src/java.base/share/classes/java/util/concurrent/ForkJoinPool.java implements the work-stealing executor.","abstain":false,"citations":[]},
+  "J4": {"answer":"The actual parallelism cannot be determined without the running JVM's effective configuration or runtime inspection. A documented default is not evidence of this deployment's value.","abstain":true,"citations":[]}
+ }
+}

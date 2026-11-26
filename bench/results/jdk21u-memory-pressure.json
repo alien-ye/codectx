@@ -1,0 +1,6 @@
+{
+  "interrupted_by_agent": true,
+  "signal": "SIGINT",
+  "peak_rss_kib": 2479440,
+  "reason": "Full JSONL load retained duplicate immutable paths/names and induced substantial swapping. Restarted after adding string pooling. This was not an OOM kill."
+}

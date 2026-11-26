@@ -1,0 +1,7 @@
+{
+  "repo": "spring-boot",
+  "run": "initial",
+  "seconds": 31.74330146700231,
+  "returncode": 0,
+  "stdout": "{\"total_files\": 11631, \"indexed_files\": 11631, \"code_files\": 8467, \"skipped\": 0, \"reindexed\": 0, \"unchanged\": 0, \"deleted\": 0, \"files_total\": 11631, \"files_by_language\": {\"unknown\": 3164, \"java\": 8443, \"groovy\": 24}, \"symbols_total\": 83293, \"refs_total\": 329450, \"index\": \"/workspace/codectx/bench/results/indexes/spring-boot\"}\n"
+}

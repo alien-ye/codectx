@@ -1,0 +1,402 @@
+[
+  {
+    "repo": "django",
+    "query": "Build lazy database queries and filter model records",
+    "name": "QuerySet",
+    "file": "django/db/models/query.py",
+    "line": 373,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "django",
+    "query": "Base class for persistent database objects and saving instances",
+    "name": "Model",
+    "file": "django/db/models/base.py",
+    "line": 508,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "django",
+    "query": "Resolve incoming request paths against nested URL patterns",
+    "name": "URLResolver",
+    "file": "django/urls/resolvers.py",
+    "line": 504,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "django",
+    "query": "Compile and render template text with a context",
+    "name": "Template",
+    "file": "django/template/base.py",
+    "line": 144,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "django",
+    "query": "Attach the authenticated user to each HTTP request",
+    "name": "AuthenticationMiddleware",
+    "file": "django/contrib/auth/middleware.py",
+    "line": 29,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "django",
+    "query": "Divide a collection of results into numbered pages",
+    "name": "Paginator",
+    "file": "django/core/paginator.py",
+    "line": 149,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "django",
+    "query": "Represent an outgoing HTTP response with headers and content",
+    "name": "HttpResponse",
+    "file": "django/http/response.py",
+    "line": 381,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "django",
+    "query": "Common interface for cache backends and key expiration",
+    "name": "BaseCache",
+    "file": "django/core/cache/backends/base.py",
+    "line": 58,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "django",
+    "query": "Validate submitted form fields and collect validation errors",
+    "name": "BaseForm",
+    "file": "django/forms/forms.py",
+    "line": 52,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "django",
+    "query": "Plan and execute database schema migrations",
+    "name": "MigrationExecutor",
+    "file": "django/db/migrations/executor.py",
+    "line": 10,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "langchain",
+    "query": "Compose processing steps so one output feeds the next",
+    "name": "RunnableSequence",
+    "file": "libs/core/langchain_core/runnables/base.py",
+    "line": 3100,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "langchain",
+    "query": "Common interface for chat model invocation and streaming",
+    "name": "BaseChatModel",
+    "file": "libs/core/langchain_core/language_models/chat_models.py",
+    "line": 336,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "langchain",
+    "query": "Interface for retrieving relevant documents given a query",
+    "name": "BaseRetriever",
+    "file": "libs/core/langchain_core/retrievers.py",
+    "line": 55,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "langchain",
+    "query": "Build chat prompts from templated messages",
+    "name": "ChatPromptTemplate",
+    "file": "libs/core/langchain_core/prompts/chat.py",
+    "line": 795,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "langchain",
+    "query": "Define callable tools with input schemas and validation",
+    "name": "BaseTool",
+    "file": "libs/core/langchain_core/tools/base.py",
+    "line": 434,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "langchain",
+    "query": "Recursively split text into chunks using a list of separators",
+    "name": "RecursiveCharacterTextSplitter",
+    "file": "libs/text-splitters/langchain_text_splitters/character.py",
+    "line": 91,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "langchain",
+    "query": "Store document embeddings in memory and find similar documents",
+    "name": "InMemoryVectorStore",
+    "file": "libs/core/langchain_core/vectorstores/in_memory.py",
+    "line": 34,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "langchain",
+    "query": "Run multiple processing branches concurrently on the same input",
+    "name": "RunnableParallel",
+    "file": "libs/core/langchain_core/runnables/base.py",
+    "line": 3889,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "langchain",
+    "query": "Parse language model responses into JSON objects",
+    "name": "JsonOutputParser",
+    "file": "libs/core/langchain_core/output_parsers/json.py",
+    "line": 32,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "langchain",
+    "query": "Maintain conversation message history across runnable invocations",
+    "name": "RunnableWithMessageHistory",
+    "file": "libs/core/langchain_core/runnables/history.py",
+    "line": 40,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "spring-boot",
+    "query": "Bootstrap and launch a standalone Spring application",
+    "name": "SpringApplication",
+    "file": "core/spring-boot/src/main/java/org/springframework/boot/SpringApplication.java",
+    "line": 179,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "spring-boot",
+    "query": "Select which auto configuration classes should be imported",
+    "name": "AutoConfigurationImportSelector",
+    "file": "core/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/AutoConfigurationImportSelector.java",
+    "line": 66,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "spring-boot",
+    "query": "Annotation combining application configuration component scanning and auto configuration",
+    "name": "SpringBootApplication",
+    "file": "core/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/SpringBootApplication.java",
+    "line": 46,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "spring-boot",
+    "query": "Bind external property values to configuration properties beans",
+    "name": "ConfigurationPropertiesBinder",
+    "file": "core/spring-boot/src/main/java/org/springframework/boot/context/properties/ConfigurationPropertiesBinder.java",
+    "line": 55,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "spring-boot",
+    "query": "Expose application health information through an actuator endpoint",
+    "name": "HealthEndpoint",
+    "file": "module/spring-boot-health/src/main/java/org/springframework/boot/health/actuate/endpoint/HealthEndpoint.java",
+    "line": 35,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "spring-boot",
+    "query": "Track application liveness and readiness state changes",
+    "name": "ApplicationAvailabilityBean",
+    "file": "core/spring-boot/src/main/java/org/springframework/boot/availability/ApplicationAvailabilityBean.java",
+    "line": 27,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "spring-boot",
+    "query": "Initialize the logging system during application startup events",
+    "name": "LoggingApplicationListener",
+    "file": "core/spring-boot/src/main/java/org/springframework/boot/context/logging/LoggingApplicationListener.java",
+    "line": 84,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "spring-boot",
+    "query": "Analyze startup failures and provide actionable diagnostics",
+    "name": "FailureAnalyzer",
+    "file": "core/spring-boot/src/main/java/org/springframework/boot/diagnostics/FailureAnalyzer.java",
+    "line": 17,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "spring-boot",
+    "query": "Launch an executable archive with nested dependency jars",
+    "name": "JarLauncher",
+    "file": "loader/spring-boot-loader/src/main/java/org/springframework/boot/loader/launch/JarLauncher.java",
+    "line": 18,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "spring-boot",
+    "query": "Automatically configure the synchronous REST client builder",
+    "name": "RestClientAutoConfiguration",
+    "file": "module/spring-boot-restclient/src/main/java/org/springframework/boot/restclient/autoconfigure/RestClientAutoConfiguration.java",
+    "line": 48,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "kafka",
+    "query": "Public client for publishing records to Kafka topics",
+    "name": "KafkaProducer",
+    "file": "clients/src/main/java/org/apache/kafka/clients/producer/KafkaProducer.java",
+    "line": 251,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "kafka",
+    "query": "Public client for subscribing to topics and consuming records",
+    "name": "KafkaConsumer",
+    "file": "clients/src/main/java/org/apache/kafka/clients/consumer/KafkaConsumer.java",
+    "line": 552,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "kafka",
+    "query": "Accumulate records into batches before sending them to brokers",
+    "name": "RecordAccumulator",
+    "file": "clients/src/main/java/org/apache/kafka/clients/producer/internals/RecordAccumulator.java",
+    "line": 74,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "kafka",
+    "query": "Background producer thread that sends record batches to brokers",
+    "name": "Sender",
+    "file": "clients/src/main/java/org/apache/kafka/clients/producer/internals/Sender.java",
+    "line": 79,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "kafka",
+    "query": "Manage nonblocking network connections and broker requests",
+    "name": "NetworkClient",
+    "file": "clients/src/main/java/org/apache/kafka/clients/NetworkClient.java",
+    "line": 89,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "kafka",
+    "query": "Coordinate consumer group membership and partition assignment",
+    "name": "ConsumerCoordinator",
+    "file": "clients/src/main/java/org/apache/kafka/clients/consumer/internals/ConsumerCoordinator.java",
+    "line": 103,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "kafka",
+    "query": "Manage producer transactions and idempotent sequence numbers",
+    "name": "TransactionManager",
+    "file": "clients/src/main/java/org/apache/kafka/clients/producer/internals/TransactionManager.java",
+    "line": 99,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "kafka",
+    "query": "Build a stream processing topology using the high level DSL",
+    "name": "StreamsBuilder",
+    "file": "streams/src/main/java/org/apache/kafka/streams/StreamsBuilder.java",
+    "line": 68,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "kafka",
+    "query": "Define the graph of processors for a stream processing application",
+    "name": "Topology",
+    "file": "streams/src/main/java/org/apache/kafka/streams/Topology.java",
+    "line": 63,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "kafka",
+    "query": "Implement administrative requests for topics brokers and consumer groups",
+    "name": "KafkaAdminClient",
+    "file": "clients/src/main/java/org/apache/kafka/clients/admin/KafkaAdminClient.java",
+    "line": 328,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "jdk21u",
+    "query": "Hash table implementation of the map interface allowing null keys",
+    "name": "HashMap",
+    "file": "src/java.base/share/classes/java/util/HashMap.java",
+    "line": 139,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "jdk21u",
+    "query": "Concurrent hash table supporting thread safe retrievals and updates",
+    "name": "ConcurrentHashMap",
+    "file": "src/java.base/share/classes/java/util/concurrent/ConcurrentHashMap.java",
+    "line": 264,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "jdk21u",
+    "query": "Create and manage platform and virtual execution threads",
+    "name": "Thread",
+    "file": "src/java.base/share/classes/java/lang/Thread.java",
+    "line": 219,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "jdk21u",
+    "query": "Compose asynchronous computations with completion callbacks",
+    "name": "CompletableFuture",
+    "file": "src/java.base/share/classes/java/util/concurrent/CompletableFuture.java",
+    "line": 144,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "jdk21u",
+    "query": "Immutable sequence of characters with string manipulation operations",
+    "name": "String",
+    "file": "src/java.base/share/classes/java/lang/String.java",
+    "line": 142,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "jdk21u",
+    "query": "Resizable array implementation of an ordered list",
+    "name": "ArrayList",
+    "file": "src/java.base/share/classes/java/util/ArrayList.java",
+    "line": 109,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "jdk21u",
+    "query": "Work stealing executor for fork join tasks",
+    "name": "ForkJoinPool",
+    "file": "src/java.base/share/classes/java/util/concurrent/ForkJoinPool.java",
+    "line": 186,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "jdk21u",
+    "query": "Utility methods to read write copy and traverse filesystem paths",
+    "name": "Files",
+    "file": "src/java.base/share/classes/java/nio/file/Files.java",
+    "line": 95,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "jdk21u",
+    "query": "Compile regular expressions for matching character sequences",
+    "name": "Pattern",
+    "file": "src/java.base/share/classes/java/util/regex/Pattern.java",
+    "line": 803,
+    "kind": "natural_language"
+  },
+  {
+    "repo": "jdk21u",
+    "query": "Send HTTP requests and receive responses synchronously or asynchronously",
+    "name": "HttpClient",
+    "file": "src/java.net.http/share/classes/java/net/http/HttpClient.java",
+    "line": 165,
+    "kind": "natural_language"
+  }
+]

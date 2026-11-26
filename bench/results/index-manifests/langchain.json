@@ -1,0 +1,13 @@
+{
+  "last_index_root": "/workspace/repos/langchain",
+  "format_version": 2,
+  "root": "/workspace/repos/langchain",
+  "indexed_at": 1795600539557971079,
+  "file_count": 3308,
+  "symbol_count": 27353,
+  "ref_count": 89749,
+  "vector_model_id": "minishlab/potion-code-16M-v2",
+  "vector_dim": 256,
+  "vector_count": 27353,
+  "vector_fingerprint": "79e912d479e6beff4ae4a44134090f0a1d6e94f14f2a545af678c3906df41a92"
+}

@@ -1,0 +1,44 @@
+{
+  "context_conditions": 80,
+  "questions": 20,
+  "summary": [
+    {
+      "mode": "none",
+      "behavior_complete": 0,
+      "behavior_total": 10,
+      "behavior_reference_claims_available": 0,
+      "behavior_reference_claims_total": 25,
+      "location_gold_file_present": 0,
+      "location_total": 5
+    },
+    {
+      "mode": "bm25",
+      "behavior_complete": 3,
+      "behavior_total": 10,
+      "behavior_reference_claims_available": 8,
+      "behavior_reference_claims_total": 25,
+      "location_gold_file_present": 1,
+      "location_total": 5
+    },
+    {
+      "mode": "codectx",
+      "behavior_complete": 8,
+      "behavior_total": 10,
+      "behavior_reference_claims_available": 21,
+      "behavior_reference_claims_total": 25,
+      "location_gold_file_present": 4,
+      "location_total": 5
+    },
+    {
+      "mode": "gold",
+      "behavior_complete": 10,
+      "behavior_total": 10,
+      "behavior_reference_claims_available": 25,
+      "behavior_reference_claims_total": 25,
+      "location_gold_file_present": 5,
+      "location_total": 5
+    }
+  ],
+  "generator": "interactive assistant, not isolated model-server calls",
+  "independent_answer_accuracy": null
+}
