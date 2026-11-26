@@ -1,0 +1,8 @@
+{
+  "frozen_at_utc": "2026-11-25T12:12:05.163510+00:00",
+  "sha256": {
+    "no_context_answers.json": "2473efc19c431a902324e0d55c59c7fbe9e6c15a496828ba38d659809b61bfdf",
+    "cases.json": "f589ff688944540924c1e3f09388e168a30d22c043d201c754e287b2375c9c6a"
+  },
+  "note": "Frozen before new source reference collection; interactive condition isolation and independent judging are not claimed."
+}

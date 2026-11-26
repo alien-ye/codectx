@@ -1,0 +1,1582 @@
+[
+  {
+    "case_id": "D1",
+    "repo": "django",
+    "kind": "behavior",
+    "mode": "none",
+    "answerable": true,
+    "file_evidence_recall": 0.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "D1.1",
+        "available": false
+      },
+      {
+        "claim_id": "D1.2",
+        "available": false
+      }
+    ],
+    "context_characters": 0,
+    "context_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "case_id": "D1",
+    "repo": "django",
+    "kind": "behavior",
+    "mode": "codectx",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "D1.1",
+        "available": false
+      },
+      {
+        "claim_id": "D1.2",
+        "available": false
+      }
+    ],
+    "context_characters": 5436,
+    "context_sha256": "25ee9d9027256a3060946974fa91f4aefd805b029d598ea778f69cb8b02b5507"
+  },
+  {
+    "case_id": "D1",
+    "repo": "django",
+    "kind": "behavior",
+    "mode": "bm25",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 1.0,
+    "all_required_evidence": true,
+    "claims": [
+      {
+        "claim_id": "D1.1",
+        "available": true
+      },
+      {
+        "claim_id": "D1.2",
+        "available": true
+      }
+    ],
+    "context_characters": 5116,
+    "context_sha256": "1b2c1f785a03446d7daf12e0bb2017553f1f55ff9d2ad969d3472101fca0b305"
+  },
+  {
+    "case_id": "D1",
+    "repo": "django",
+    "kind": "behavior",
+    "mode": "gold",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 1.0,
+    "all_required_evidence": true,
+    "claims": [
+      {
+        "claim_id": "D1.1",
+        "available": true
+      },
+      {
+        "claim_id": "D1.2",
+        "available": true
+      }
+    ],
+    "context_characters": 1170,
+    "context_sha256": "55fa088693453bae6eb054dcafafc06dafd05b9f50d9502d43553c472afd9cf8"
+  },
+  {
+    "case_id": "D2",
+    "repo": "django",
+    "kind": "behavior",
+    "mode": "none",
+    "answerable": true,
+    "file_evidence_recall": 0.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "D2.1",
+        "available": false
+      },
+      {
+        "claim_id": "D2.2",
+        "available": false
+      },
+      {
+        "claim_id": "D2.3",
+        "available": false
+      }
+    ],
+    "context_characters": 0,
+    "context_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "case_id": "D2",
+    "repo": "django",
+    "kind": "behavior",
+    "mode": "codectx",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 1.0,
+    "all_required_evidence": true,
+    "claims": [
+      {
+        "claim_id": "D2.1",
+        "available": true
+      },
+      {
+        "claim_id": "D2.2",
+        "available": true
+      },
+      {
+        "claim_id": "D2.3",
+        "available": true
+      }
+    ],
+    "context_characters": 5610,
+    "context_sha256": "5a830c6376e456a69db37d4721bb754836371b5e1503cda69679b438e1d95d90"
+  },
+  {
+    "case_id": "D2",
+    "repo": "django",
+    "kind": "behavior",
+    "mode": "bm25",
+    "answerable": true,
+    "file_evidence_recall": 0.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "D2.1",
+        "available": false
+      },
+      {
+        "claim_id": "D2.2",
+        "available": false
+      },
+      {
+        "claim_id": "D2.3",
+        "available": false
+      }
+    ],
+    "context_characters": 5589,
+    "context_sha256": "95507cd04bf7b0de10c73390f57fa041c75ff414ea26a5e9546b4ed94c326a58"
+  },
+  {
+    "case_id": "D2",
+    "repo": "django",
+    "kind": "behavior",
+    "mode": "gold",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 1.0,
+    "all_required_evidence": true,
+    "claims": [
+      {
+        "claim_id": "D2.1",
+        "available": true
+      },
+      {
+        "claim_id": "D2.2",
+        "available": true
+      },
+      {
+        "claim_id": "D2.3",
+        "available": true
+      }
+    ],
+    "context_characters": 540,
+    "context_sha256": "2cda6e02c4aaf81a3f63d414e9bd4229a4d7b6f72bd4854b7d038dfbd519f514"
+  },
+  {
+    "case_id": "D3",
+    "repo": "django",
+    "kind": "location",
+    "mode": "none",
+    "answerable": true,
+    "file_evidence_recall": 0.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "D3.1",
+        "available": false
+      }
+    ],
+    "context_characters": 0,
+    "context_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "case_id": "D3",
+    "repo": "django",
+    "kind": "location",
+    "mode": "codectx",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "D3.1",
+        "available": false
+      }
+    ],
+    "context_characters": 5893,
+    "context_sha256": "58c667514bf38deec0bd3fbd02b13160251f49e900268a3743c36e91f1ced7f9"
+  },
+  {
+    "case_id": "D3",
+    "repo": "django",
+    "kind": "location",
+    "mode": "bm25",
+    "answerable": true,
+    "file_evidence_recall": 0.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "D3.1",
+        "available": false
+      }
+    ],
+    "context_characters": 5785,
+    "context_sha256": "11db7b5a2437b84c6856ef604bb928288022e5c261a20daafa0757ae996d9030"
+  },
+  {
+    "case_id": "D3",
+    "repo": "django",
+    "kind": "location",
+    "mode": "gold",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 1.0,
+    "all_required_evidence": true,
+    "claims": [
+      {
+        "claim_id": "D3.1",
+        "available": true
+      }
+    ],
+    "context_characters": 289,
+    "context_sha256": "7e47d1fef008c321f1c5254dc07bb0bad0704a23f7d1bb0995cd5e2cba3d91bc"
+  },
+  {
+    "case_id": "D4",
+    "repo": "django",
+    "kind": "unanswerable",
+    "mode": "none",
+    "answerable": false,
+    "file_evidence_recall": null,
+    "claim_evidence_recall": null,
+    "all_required_evidence": null,
+    "claims": [],
+    "context_characters": 0,
+    "context_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "case_id": "D4",
+    "repo": "django",
+    "kind": "unanswerable",
+    "mode": "codectx",
+    "answerable": false,
+    "file_evidence_recall": null,
+    "claim_evidence_recall": null,
+    "all_required_evidence": null,
+    "claims": [],
+    "context_characters": 5519,
+    "context_sha256": "85e6b9c6a15a9aef820471807fab634ac40445905e4a45d8f3af960d5311cc01"
+  },
+  {
+    "case_id": "D4",
+    "repo": "django",
+    "kind": "unanswerable",
+    "mode": "bm25",
+    "answerable": false,
+    "file_evidence_recall": null,
+    "claim_evidence_recall": null,
+    "all_required_evidence": null,
+    "claims": [],
+    "context_characters": 5851,
+    "context_sha256": "e092f55ca678b82a4071820bc00f86459299a0e68e2912c0d7fee7f7c242ab16"
+  },
+  {
+    "case_id": "D4",
+    "repo": "django",
+    "kind": "unanswerable",
+    "mode": "gold",
+    "answerable": false,
+    "file_evidence_recall": null,
+    "claim_evidence_recall": null,
+    "all_required_evidence": null,
+    "claims": [],
+    "context_characters": 0,
+    "context_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "case_id": "J1",
+    "repo": "jdk21u",
+    "kind": "behavior",
+    "mode": "none",
+    "answerable": true,
+    "file_evidence_recall": 0.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "J1.1",
+        "available": false
+      },
+      {
+        "claim_id": "J1.2",
+        "available": false
+      },
+      {
+        "claim_id": "J1.3",
+        "available": false
+      }
+    ],
+    "context_characters": 0,
+    "context_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "case_id": "J1",
+    "repo": "jdk21u",
+    "kind": "behavior",
+    "mode": "codectx",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 1.0,
+    "all_required_evidence": true,
+    "claims": [
+      {
+        "claim_id": "J1.1",
+        "available": true
+      },
+      {
+        "claim_id": "J1.2",
+        "available": true
+      },
+      {
+        "claim_id": "J1.3",
+        "available": true
+      }
+    ],
+    "context_characters": 5570,
+    "context_sha256": "3b3d3e70590677c9a703073633cb1077e25da0674512a88fadba198b2dd37885"
+  },
+  {
+    "case_id": "J1",
+    "repo": "jdk21u",
+    "kind": "behavior",
+    "mode": "bm25",
+    "answerable": true,
+    "file_evidence_recall": 0.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "J1.1",
+        "available": false
+      },
+      {
+        "claim_id": "J1.2",
+        "available": false
+      },
+      {
+        "claim_id": "J1.3",
+        "available": false
+      }
+    ],
+    "context_characters": 5057,
+    "context_sha256": "55041d64295494b56b8f882ac2d3b47273c68360f496edfc83c1701be1a45ad0"
+  },
+  {
+    "case_id": "J1",
+    "repo": "jdk21u",
+    "kind": "behavior",
+    "mode": "gold",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 1.0,
+    "all_required_evidence": true,
+    "claims": [
+      {
+        "claim_id": "J1.1",
+        "available": true
+      },
+      {
+        "claim_id": "J1.2",
+        "available": true
+      },
+      {
+        "claim_id": "J1.3",
+        "available": true
+      }
+    ],
+    "context_characters": 744,
+    "context_sha256": "182e2c91a9f0ccd47b97b0bca0256e21a4edaa1ad107c305c0cfd322f8b581b5"
+  },
+  {
+    "case_id": "J2",
+    "repo": "jdk21u",
+    "kind": "behavior",
+    "mode": "none",
+    "answerable": true,
+    "file_evidence_recall": 0.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "J2.1",
+        "available": false
+      },
+      {
+        "claim_id": "J2.2",
+        "available": false
+      },
+      {
+        "claim_id": "J2.3",
+        "available": false
+      }
+    ],
+    "context_characters": 0,
+    "context_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "case_id": "J2",
+    "repo": "jdk21u",
+    "kind": "behavior",
+    "mode": "codectx",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 1.0,
+    "all_required_evidence": true,
+    "claims": [
+      {
+        "claim_id": "J2.1",
+        "available": true
+      },
+      {
+        "claim_id": "J2.2",
+        "available": true
+      },
+      {
+        "claim_id": "J2.3",
+        "available": true
+      }
+    ],
+    "context_characters": 5671,
+    "context_sha256": "04d88d92ebe00f22867662dba36519b9dd6a69bdf15524c830a5e2f0a674e5e2"
+  },
+  {
+    "case_id": "J2",
+    "repo": "jdk21u",
+    "kind": "behavior",
+    "mode": "bm25",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 0.3333333333333333,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "J2.1",
+        "available": true
+      },
+      {
+        "claim_id": "J2.2",
+        "available": false
+      },
+      {
+        "claim_id": "J2.3",
+        "available": false
+      }
+    ],
+    "context_characters": 5553,
+    "context_sha256": "4bc1c4ae564ebe1d545d16a03a936ec111d3f2496af061c43801ac9221d7fcf7"
+  },
+  {
+    "case_id": "J2",
+    "repo": "jdk21u",
+    "kind": "behavior",
+    "mode": "gold",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 1.0,
+    "all_required_evidence": true,
+    "claims": [
+      {
+        "claim_id": "J2.1",
+        "available": true
+      },
+      {
+        "claim_id": "J2.2",
+        "available": true
+      },
+      {
+        "claim_id": "J2.3",
+        "available": true
+      }
+    ],
+    "context_characters": 2137,
+    "context_sha256": "954043203e9df3cb43b73b54e2a73661c2e7755014fe2ffe5ec2a812bc4f7acd"
+  },
+  {
+    "case_id": "J3",
+    "repo": "jdk21u",
+    "kind": "location",
+    "mode": "none",
+    "answerable": true,
+    "file_evidence_recall": 0.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "J3.1",
+        "available": false
+      }
+    ],
+    "context_characters": 0,
+    "context_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "case_id": "J3",
+    "repo": "jdk21u",
+    "kind": "location",
+    "mode": "codectx",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "J3.1",
+        "available": false
+      }
+    ],
+    "context_characters": 5824,
+    "context_sha256": "6ef6f038b636365766a1a9d83f82c62bc6e537d645caf57a9ca9db4ab95259b2"
+  },
+  {
+    "case_id": "J3",
+    "repo": "jdk21u",
+    "kind": "location",
+    "mode": "bm25",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 1.0,
+    "all_required_evidence": true,
+    "claims": [
+      {
+        "claim_id": "J3.1",
+        "available": true
+      }
+    ],
+    "context_characters": 5968,
+    "context_sha256": "12023985bbbacd696d163af003a5ec937323277275cf084277b157a3d5540dfd"
+  },
+  {
+    "case_id": "J3",
+    "repo": "jdk21u",
+    "kind": "location",
+    "mode": "gold",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 1.0,
+    "all_required_evidence": true,
+    "claims": [
+      {
+        "claim_id": "J3.1",
+        "available": true
+      }
+    ],
+    "context_characters": 259,
+    "context_sha256": "ecdabaf1b2bf29f49e6d6cf196143035ee0953f02445e245571585199884df9f"
+  },
+  {
+    "case_id": "J4",
+    "repo": "jdk21u",
+    "kind": "unanswerable",
+    "mode": "none",
+    "answerable": false,
+    "file_evidence_recall": null,
+    "claim_evidence_recall": null,
+    "all_required_evidence": null,
+    "claims": [],
+    "context_characters": 0,
+    "context_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "case_id": "J4",
+    "repo": "jdk21u",
+    "kind": "unanswerable",
+    "mode": "codectx",
+    "answerable": false,
+    "file_evidence_recall": null,
+    "claim_evidence_recall": null,
+    "all_required_evidence": null,
+    "claims": [],
+    "context_characters": 5603,
+    "context_sha256": "8ac354505e5fa440b9301b376cfc07ebe891d3d7d71014f62eb71879f3742900"
+  },
+  {
+    "case_id": "J4",
+    "repo": "jdk21u",
+    "kind": "unanswerable",
+    "mode": "bm25",
+    "answerable": false,
+    "file_evidence_recall": null,
+    "claim_evidence_recall": null,
+    "all_required_evidence": null,
+    "claims": [],
+    "context_characters": 5976,
+    "context_sha256": "7a7cd00b96c967483432afa9457086e3c1324e01253c9134eb0757bf6b762a53"
+  },
+  {
+    "case_id": "J4",
+    "repo": "jdk21u",
+    "kind": "unanswerable",
+    "mode": "gold",
+    "answerable": false,
+    "file_evidence_recall": null,
+    "claim_evidence_recall": null,
+    "all_required_evidence": null,
+    "claims": [],
+    "context_characters": 0,
+    "context_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "case_id": "K1",
+    "repo": "kafka",
+    "kind": "behavior",
+    "mode": "none",
+    "answerable": true,
+    "file_evidence_recall": 0.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "K1.1",
+        "available": false
+      },
+      {
+        "claim_id": "K1.2",
+        "available": false
+      },
+      {
+        "claim_id": "K1.3",
+        "available": false
+      }
+    ],
+    "context_characters": 0,
+    "context_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "case_id": "K1",
+    "repo": "kafka",
+    "kind": "behavior",
+    "mode": "codectx",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 1.0,
+    "all_required_evidence": true,
+    "claims": [
+      {
+        "claim_id": "K1.1",
+        "available": true
+      },
+      {
+        "claim_id": "K1.2",
+        "available": true
+      },
+      {
+        "claim_id": "K1.3",
+        "available": true
+      }
+    ],
+    "context_characters": 3965,
+    "context_sha256": "44b94f88729411c22e7cad3e16584628b6df457e8ff07cdc13a72e033a92da98"
+  },
+  {
+    "case_id": "K1",
+    "repo": "kafka",
+    "kind": "behavior",
+    "mode": "bm25",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 1.0,
+    "all_required_evidence": true,
+    "claims": [
+      {
+        "claim_id": "K1.1",
+        "available": true
+      },
+      {
+        "claim_id": "K1.2",
+        "available": true
+      },
+      {
+        "claim_id": "K1.3",
+        "available": true
+      }
+    ],
+    "context_characters": 4812,
+    "context_sha256": "1d6b23e8bfbce5c950039eaf9645d60f0561224ff4aef2fee7649d0ba9f23ca0"
+  },
+  {
+    "case_id": "K1",
+    "repo": "kafka",
+    "kind": "behavior",
+    "mode": "gold",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 1.0,
+    "all_required_evidence": true,
+    "claims": [
+      {
+        "claim_id": "K1.1",
+        "available": true
+      },
+      {
+        "claim_id": "K1.2",
+        "available": true
+      },
+      {
+        "claim_id": "K1.3",
+        "available": true
+      }
+    ],
+    "context_characters": 1338,
+    "context_sha256": "7ec66671f39780528ec6bd34d7ca6a70ccedbd3a426c6fd587fdb3136048d970"
+  },
+  {
+    "case_id": "K2",
+    "repo": "kafka",
+    "kind": "behavior",
+    "mode": "none",
+    "answerable": true,
+    "file_evidence_recall": 0.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "K2.1",
+        "available": false
+      },
+      {
+        "claim_id": "K2.2",
+        "available": false
+      }
+    ],
+    "context_characters": 0,
+    "context_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "case_id": "K2",
+    "repo": "kafka",
+    "kind": "behavior",
+    "mode": "codectx",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "K2.1",
+        "available": false
+      },
+      {
+        "claim_id": "K2.2",
+        "available": false
+      }
+    ],
+    "context_characters": 5866,
+    "context_sha256": "66d58515c577ab9a1bebdcce9fe5fa922d4e8ab2b2e635d3c1f870a22a9b4701"
+  },
+  {
+    "case_id": "K2",
+    "repo": "kafka",
+    "kind": "behavior",
+    "mode": "bm25",
+    "answerable": true,
+    "file_evidence_recall": 0.5,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "K2.1",
+        "available": false
+      },
+      {
+        "claim_id": "K2.2",
+        "available": false
+      }
+    ],
+    "context_characters": 5898,
+    "context_sha256": "a0b4b3ba20d6ff5cc401ceb999ed84f96f0908cf63c37bdc561cd3ba6e4b19c6"
+  },
+  {
+    "case_id": "K2",
+    "repo": "kafka",
+    "kind": "behavior",
+    "mode": "gold",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 1.0,
+    "all_required_evidence": true,
+    "claims": [
+      {
+        "claim_id": "K2.1",
+        "available": true
+      },
+      {
+        "claim_id": "K2.2",
+        "available": true
+      }
+    ],
+    "context_characters": 1016,
+    "context_sha256": "d3c154dfd321d170569ba98e8a0414aee0c4a8b405a5f8a9908b9058c61f25f8"
+  },
+  {
+    "case_id": "K3",
+    "repo": "kafka",
+    "kind": "location",
+    "mode": "none",
+    "answerable": true,
+    "file_evidence_recall": 0.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "K3.1",
+        "available": false
+      }
+    ],
+    "context_characters": 0,
+    "context_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "case_id": "K3",
+    "repo": "kafka",
+    "kind": "location",
+    "mode": "codectx",
+    "answerable": true,
+    "file_evidence_recall": 0.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "K3.1",
+        "available": false
+      }
+    ],
+    "context_characters": 5996,
+    "context_sha256": "f40445514a0cc14af07a259024edf44dcf820dc1df7462109561c947d9068e9c"
+  },
+  {
+    "case_id": "K3",
+    "repo": "kafka",
+    "kind": "location",
+    "mode": "bm25",
+    "answerable": true,
+    "file_evidence_recall": 0.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "K3.1",
+        "available": false
+      }
+    ],
+    "context_characters": 5207,
+    "context_sha256": "eaddf0a2e2311b08453dc1ed4b24044e808849a4242fd0ee39349e984573a89a"
+  },
+  {
+    "case_id": "K3",
+    "repo": "kafka",
+    "kind": "location",
+    "mode": "gold",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 1.0,
+    "all_required_evidence": true,
+    "claims": [
+      {
+        "claim_id": "K3.1",
+        "available": true
+      }
+    ],
+    "context_characters": 285,
+    "context_sha256": "e9aa5bf37ddcc0a44b663855dfa4101a72f4c398a7ebbcbc44003dfa04dd08d7"
+  },
+  {
+    "case_id": "K4",
+    "repo": "kafka",
+    "kind": "unanswerable",
+    "mode": "none",
+    "answerable": false,
+    "file_evidence_recall": null,
+    "claim_evidence_recall": null,
+    "all_required_evidence": null,
+    "claims": [],
+    "context_characters": 0,
+    "context_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "case_id": "K4",
+    "repo": "kafka",
+    "kind": "unanswerable",
+    "mode": "codectx",
+    "answerable": false,
+    "file_evidence_recall": null,
+    "claim_evidence_recall": null,
+    "all_required_evidence": null,
+    "claims": [],
+    "context_characters": 4303,
+    "context_sha256": "a8740c542a16b941b475d1ee80490fcbc283c70791d046403d1cf2b5a7b45fd2"
+  },
+  {
+    "case_id": "K4",
+    "repo": "kafka",
+    "kind": "unanswerable",
+    "mode": "bm25",
+    "answerable": false,
+    "file_evidence_recall": null,
+    "claim_evidence_recall": null,
+    "all_required_evidence": null,
+    "claims": [],
+    "context_characters": 5519,
+    "context_sha256": "7371858fe321c6ce837b3eb610660ec8250c740945e20a74f90a4343e377f4c8"
+  },
+  {
+    "case_id": "K4",
+    "repo": "kafka",
+    "kind": "unanswerable",
+    "mode": "gold",
+    "answerable": false,
+    "file_evidence_recall": null,
+    "claim_evidence_recall": null,
+    "all_required_evidence": null,
+    "claims": [],
+    "context_characters": 0,
+    "context_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "case_id": "L1",
+    "repo": "langchain",
+    "kind": "behavior",
+    "mode": "none",
+    "answerable": true,
+    "file_evidence_recall": 0.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "L1.1",
+        "available": false
+      },
+      {
+        "claim_id": "L1.2",
+        "available": false
+      }
+    ],
+    "context_characters": 0,
+    "context_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "case_id": "L1",
+    "repo": "langchain",
+    "kind": "behavior",
+    "mode": "codectx",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 1.0,
+    "all_required_evidence": true,
+    "claims": [
+      {
+        "claim_id": "L1.1",
+        "available": true
+      },
+      {
+        "claim_id": "L1.2",
+        "available": true
+      }
+    ],
+    "context_characters": 5957,
+    "context_sha256": "f888b3422911361052d574a4f7d74a968ccb729ae9894daafbf731055bdf71fc"
+  },
+  {
+    "case_id": "L1",
+    "repo": "langchain",
+    "kind": "behavior",
+    "mode": "bm25",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "L1.1",
+        "available": false
+      },
+      {
+        "claim_id": "L1.2",
+        "available": false
+      }
+    ],
+    "context_characters": 5540,
+    "context_sha256": "9dee135f4515f7df387cfd62f47356c0868c2f28cd2d8176e8a653bb833c872e"
+  },
+  {
+    "case_id": "L1",
+    "repo": "langchain",
+    "kind": "behavior",
+    "mode": "gold",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 1.0,
+    "all_required_evidence": true,
+    "claims": [
+      {
+        "claim_id": "L1.1",
+        "available": true
+      },
+      {
+        "claim_id": "L1.2",
+        "available": true
+      }
+    ],
+    "context_characters": 975,
+    "context_sha256": "15de5ac674e0da76e519fb93829d78e79c67d4a78d85c9dafb88b8aa9c605d24"
+  },
+  {
+    "case_id": "L2",
+    "repo": "langchain",
+    "kind": "behavior",
+    "mode": "none",
+    "answerable": true,
+    "file_evidence_recall": 0.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "L2.1",
+        "available": false
+      },
+      {
+        "claim_id": "L2.2",
+        "available": false
+      }
+    ],
+    "context_characters": 0,
+    "context_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "case_id": "L2",
+    "repo": "langchain",
+    "kind": "behavior",
+    "mode": "codectx",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 1.0,
+    "all_required_evidence": true,
+    "claims": [
+      {
+        "claim_id": "L2.1",
+        "available": true
+      },
+      {
+        "claim_id": "L2.2",
+        "available": true
+      }
+    ],
+    "context_characters": 5985,
+    "context_sha256": "698692ce56786f8b676fdb805cf2448a25f98fdfc1b0f3313b6db775bbcd8776"
+  },
+  {
+    "case_id": "L2",
+    "repo": "langchain",
+    "kind": "behavior",
+    "mode": "bm25",
+    "answerable": true,
+    "file_evidence_recall": 0.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "L2.1",
+        "available": false
+      },
+      {
+        "claim_id": "L2.2",
+        "available": false
+      }
+    ],
+    "context_characters": 5947,
+    "context_sha256": "8caec4738c83b5770f824a61033518bd404e724262208129530accff5a97a5e7"
+  },
+  {
+    "case_id": "L2",
+    "repo": "langchain",
+    "kind": "behavior",
+    "mode": "gold",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 1.0,
+    "all_required_evidence": true,
+    "claims": [
+      {
+        "claim_id": "L2.1",
+        "available": true
+      },
+      {
+        "claim_id": "L2.2",
+        "available": true
+      }
+    ],
+    "context_characters": 490,
+    "context_sha256": "ee2fc396e1ce7d1a0c069d3f61b08bed332308aff0b88eac5b8e0d37b8792511"
+  },
+  {
+    "case_id": "L3",
+    "repo": "langchain",
+    "kind": "location",
+    "mode": "none",
+    "answerable": true,
+    "file_evidence_recall": 0.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "L3.1",
+        "available": false
+      }
+    ],
+    "context_characters": 0,
+    "context_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "case_id": "L3",
+    "repo": "langchain",
+    "kind": "location",
+    "mode": "codectx",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "L3.1",
+        "available": false
+      }
+    ],
+    "context_characters": 5361,
+    "context_sha256": "a0ca1a0240e9fb39c1686b4449c347a120f8468226dd533619b1a0ba947774c5"
+  },
+  {
+    "case_id": "L3",
+    "repo": "langchain",
+    "kind": "location",
+    "mode": "bm25",
+    "answerable": true,
+    "file_evidence_recall": 0.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "L3.1",
+        "available": false
+      }
+    ],
+    "context_characters": 5324,
+    "context_sha256": "d33715d525dd9959872f19b9a915c4d740d97a370a85ef7192b1e7df63850c96"
+  },
+  {
+    "case_id": "L3",
+    "repo": "langchain",
+    "kind": "location",
+    "mode": "gold",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 1.0,
+    "all_required_evidence": true,
+    "claims": [
+      {
+        "claim_id": "L3.1",
+        "available": true
+      }
+    ],
+    "context_characters": 369,
+    "context_sha256": "5961ea111e3dbea5cc4b06368e4fe2b9515d8f565fbad0dc2d7d1ee055a7caf4"
+  },
+  {
+    "case_id": "L4",
+    "repo": "langchain",
+    "kind": "unanswerable",
+    "mode": "none",
+    "answerable": false,
+    "file_evidence_recall": null,
+    "claim_evidence_recall": null,
+    "all_required_evidence": null,
+    "claims": [],
+    "context_characters": 0,
+    "context_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "case_id": "L4",
+    "repo": "langchain",
+    "kind": "unanswerable",
+    "mode": "codectx",
+    "answerable": false,
+    "file_evidence_recall": null,
+    "claim_evidence_recall": null,
+    "all_required_evidence": null,
+    "claims": [],
+    "context_characters": 5885,
+    "context_sha256": "a7253586326a314273bb58d63aa91d350f3ed2acc22c31df6ba783e39b732a39"
+  },
+  {
+    "case_id": "L4",
+    "repo": "langchain",
+    "kind": "unanswerable",
+    "mode": "bm25",
+    "answerable": false,
+    "file_evidence_recall": null,
+    "claim_evidence_recall": null,
+    "all_required_evidence": null,
+    "claims": [],
+    "context_characters": 5939,
+    "context_sha256": "1846eb60ff5f6a2ee372c492ba1799d2a64da257c20ff6cdaa22bd63b8f5e1ab"
+  },
+  {
+    "case_id": "L4",
+    "repo": "langchain",
+    "kind": "unanswerable",
+    "mode": "gold",
+    "answerable": false,
+    "file_evidence_recall": null,
+    "claim_evidence_recall": null,
+    "all_required_evidence": null,
+    "claims": [],
+    "context_characters": 0,
+    "context_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "case_id": "S1",
+    "repo": "spring-boot",
+    "kind": "behavior",
+    "mode": "none",
+    "answerable": true,
+    "file_evidence_recall": 0.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "S1.1",
+        "available": false
+      },
+      {
+        "claim_id": "S1.2",
+        "available": false
+      },
+      {
+        "claim_id": "S1.3",
+        "available": false
+      }
+    ],
+    "context_characters": 0,
+    "context_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "case_id": "S1",
+    "repo": "spring-boot",
+    "kind": "behavior",
+    "mode": "codectx",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 1.0,
+    "all_required_evidence": true,
+    "claims": [
+      {
+        "claim_id": "S1.1",
+        "available": true
+      },
+      {
+        "claim_id": "S1.2",
+        "available": true
+      },
+      {
+        "claim_id": "S1.3",
+        "available": true
+      }
+    ],
+    "context_characters": 4466,
+    "context_sha256": "365013b4114a99461ac74d314e02e5dd6893f89d4c71de28b8fe33c5fb3b67d4"
+  },
+  {
+    "case_id": "S1",
+    "repo": "spring-boot",
+    "kind": "behavior",
+    "mode": "bm25",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "S1.1",
+        "available": false
+      },
+      {
+        "claim_id": "S1.2",
+        "available": false
+      },
+      {
+        "claim_id": "S1.3",
+        "available": false
+      }
+    ],
+    "context_characters": 5263,
+    "context_sha256": "75919f6051496ea8bb61cbed249f152ec78b3a0178467874a82a1417567e2bb0"
+  },
+  {
+    "case_id": "S1",
+    "repo": "spring-boot",
+    "kind": "behavior",
+    "mode": "gold",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 1.0,
+    "all_required_evidence": true,
+    "claims": [
+      {
+        "claim_id": "S1.1",
+        "available": true
+      },
+      {
+        "claim_id": "S1.2",
+        "available": true
+      },
+      {
+        "claim_id": "S1.3",
+        "available": true
+      }
+    ],
+    "context_characters": 460,
+    "context_sha256": "6e56ca53a5ba9a4a802ecba04b593f71db6dcdf97a0cb2c05ad204241416dc6f"
+  },
+  {
+    "case_id": "S2",
+    "repo": "spring-boot",
+    "kind": "behavior",
+    "mode": "none",
+    "answerable": true,
+    "file_evidence_recall": 0.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "S2.1",
+        "available": false
+      },
+      {
+        "claim_id": "S2.2",
+        "available": false
+      }
+    ],
+    "context_characters": 0,
+    "context_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "case_id": "S2",
+    "repo": "spring-boot",
+    "kind": "behavior",
+    "mode": "codectx",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 1.0,
+    "all_required_evidence": true,
+    "claims": [
+      {
+        "claim_id": "S2.1",
+        "available": true
+      },
+      {
+        "claim_id": "S2.2",
+        "available": true
+      }
+    ],
+    "context_characters": 4321,
+    "context_sha256": "aaee5bb795ee6d780bbea56d32ccbb1c37c1c3d36767452a6d8001e35ab26e76"
+  },
+  {
+    "case_id": "S2",
+    "repo": "spring-boot",
+    "kind": "behavior",
+    "mode": "bm25",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 1.0,
+    "all_required_evidence": true,
+    "claims": [
+      {
+        "claim_id": "S2.1",
+        "available": true
+      },
+      {
+        "claim_id": "S2.2",
+        "available": true
+      }
+    ],
+    "context_characters": 5686,
+    "context_sha256": "bd27b744677be6e86d0b2f6d53866b0c04b3adb2736dbafe72ad252361aa063d"
+  },
+  {
+    "case_id": "S2",
+    "repo": "spring-boot",
+    "kind": "behavior",
+    "mode": "gold",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 1.0,
+    "all_required_evidence": true,
+    "claims": [
+      {
+        "claim_id": "S2.1",
+        "available": true
+      },
+      {
+        "claim_id": "S2.2",
+        "available": true
+      }
+    ],
+    "context_characters": 686,
+    "context_sha256": "abd82540c650089ee90e6c3e638deae38599f2bcb1feb442e718d426b7f4e5ae"
+  },
+  {
+    "case_id": "S3",
+    "repo": "spring-boot",
+    "kind": "location",
+    "mode": "none",
+    "answerable": true,
+    "file_evidence_recall": 0.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "S3.1",
+        "available": false
+      }
+    ],
+    "context_characters": 0,
+    "context_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "case_id": "S3",
+    "repo": "spring-boot",
+    "kind": "location",
+    "mode": "codectx",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "S3.1",
+        "available": false
+      }
+    ],
+    "context_characters": 5518,
+    "context_sha256": "d939b402c69fdbd014c034584473ab662fd2f53181123e1caabf27cd8c0b72c0"
+  },
+  {
+    "case_id": "S3",
+    "repo": "spring-boot",
+    "kind": "location",
+    "mode": "bm25",
+    "answerable": true,
+    "file_evidence_recall": 0.0,
+    "claim_evidence_recall": 0.0,
+    "all_required_evidence": false,
+    "claims": [
+      {
+        "claim_id": "S3.1",
+        "available": false
+      }
+    ],
+    "context_characters": 5817,
+    "context_sha256": "9ad493978c56ff3193ac59fa4cfa7becc5b12fb505dc27d499be8f603b846c88"
+  },
+  {
+    "case_id": "S3",
+    "repo": "spring-boot",
+    "kind": "location",
+    "mode": "gold",
+    "answerable": true,
+    "file_evidence_recall": 1.0,
+    "claim_evidence_recall": 1.0,
+    "all_required_evidence": true,
+    "claims": [
+      {
+        "claim_id": "S3.1",
+        "available": true
+      }
+    ],
+    "context_characters": 448,
+    "context_sha256": "49696a87b3e67bfafdd6313ae68ff0bf2fc45da88c7a1abd8d4b81f7271be934"
+  },
+  {
+    "case_id": "S4",
+    "repo": "spring-boot",
+    "kind": "unanswerable",
+    "mode": "none",
+    "answerable": false,
+    "file_evidence_recall": null,
+    "claim_evidence_recall": null,
+    "all_required_evidence": null,
+    "claims": [],
+    "context_characters": 0,
+    "context_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "case_id": "S4",
+    "repo": "spring-boot",
+    "kind": "unanswerable",
+    "mode": "codectx",
+    "answerable": false,
+    "file_evidence_recall": null,
+    "claim_evidence_recall": null,
+    "all_required_evidence": null,
+    "claims": [],
+    "context_characters": 5594,
+    "context_sha256": "591ff99ea83d3ba1b183336af952f70c2f27833e9ba23e838675b33e3a06b711"
+  },
+  {
+    "case_id": "S4",
+    "repo": "spring-boot",
+    "kind": "unanswerable",
+    "mode": "bm25",
+    "answerable": false,
+    "file_evidence_recall": null,
+    "claim_evidence_recall": null,
+    "all_required_evidence": null,
+    "claims": [],
+    "context_characters": 5216,
+    "context_sha256": "fc3261f87a36fdfdfe7f3c270be0006945784b790d79591857bdc47f045b05bc"
+  },
+  {
+    "case_id": "S4",
+    "repo": "spring-boot",
+    "kind": "unanswerable",
+    "mode": "gold",
+    "answerable": false,
+    "file_evidence_recall": null,
+    "claim_evidence_recall": null,
+    "all_required_evidence": null,
+    "claims": [],
+    "context_characters": 0,
+    "context_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

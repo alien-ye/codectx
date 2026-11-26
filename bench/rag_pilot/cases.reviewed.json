@@ -1,0 +1,773 @@
+[
+  {
+    "id": "D1",
+    "repo": "django",
+    "kind": "behavior",
+    "question": "What happens when a QuerySet is indexed or sliced using a negative bound? What happens to a slice that specifies a step?",
+    "reference_spans": [
+      {
+        "file": "django/db/models/query.py",
+        "start": 499,
+        "end": 534,
+        "qualified_name": "QuerySet.__getitem__",
+        "text": "    def __getitem__(self, k):\n        \"\"\"Retrieve an item or slice from the set of results.\"\"\"\n        if not isinstance(k, (int, slice)):\n            raise TypeError(\n                \"QuerySet indices must be integers or slices, not %s.\"\n                % type(k).__name__\n            )\n        if (isinstance(k, int) and k < 0) or (\n            isinstance(k, slice)\n            and (\n                (k.start is not None and k.start < 0)\n                or (k.stop is not None and k.stop < 0)\n            )\n        ):\n            raise ValueError(\"Negative indexing is not supported.\")\n\n        if self._result_cache is not None:\n            return self._result_cache[k]\n\n        if isinstance(k, slice):\n            qs = self._chain()\n            if k.start is not None:\n                start = int(k.start)\n            else:\n                start = None\n            if k.stop is not None:\n                stop = int(k.stop)\n            else:\n                stop = None\n            qs.query.set_limits(start, stop)\n            return list(qs)[:: k.step] if k.step else qs\n\n        qs = self._chain()\n        qs.query.set_limits(k, k + 1)\n        qs._fetch_all()\n        return qs._result_cache[0]"
+      }
+    ],
+    "commit": "f14af5a88472ca10e2e94b37d6c17ee48cbdeb4d",
+    "reference_answer": "Negative integer indices and negative start/stop bounds raise ValueError before the result-cache shortcut. Cached results use Python indexing. An uncached slice clones the queryset, sets query limits, and applies a truthy step to list(qs); without a truthy step it returns qs.",
+    "essential_claims": [
+      {
+        "id": "D1.1",
+        "text": "Negative integer/start/stop bounds raise ValueError.",
+        "evidence": [
+          {
+            "file": "django/db/models/query.py",
+            "start": 506,
+            "end": 513,
+            "text": "        if (isinstance(k, int) and k < 0) or (\n            isinstance(k, slice)\n            and (\n                (k.start is not None and k.start < 0)\n                or (k.stop is not None and k.stop < 0)\n            )\n        ):\n            raise ValueError(\"Negative indexing is not supported.\")"
+          }
+        ]
+      },
+      {
+        "id": "D1.2",
+        "text": "An uncached truthy-step slice materializes a list; otherwise it returns the limited queryset.",
+        "evidence": [
+          {
+            "file": "django/db/models/query.py",
+            "start": 518,
+            "end": 529,
+            "text": "        if isinstance(k, slice):\n            qs = self._chain()\n            if k.start is not None:\n                start = int(k.start)\n            else:\n                start = None\n            if k.stop is not None:\n                stop = int(k.stop)\n            else:\n                stop = None\n            qs.query.set_limits(start, stop)\n            return list(qs)[:: k.step] if k.step else qs"
+          }
+        ]
+      }
+    ],
+    "review_status": "assistant_source_checked_not_independent_human_review",
+    "answerable": true
+  },
+  {
+    "id": "D2",
+    "repo": "django",
+    "kind": "behavior",
+    "question": "How does BaseCache.get_backend_timeout handle DEFAULT_TIMEOUT, None, and a timeout of zero?",
+    "reference_spans": [
+      {
+        "file": "django/core/cache/backends/base.py",
+        "start": 87,
+        "end": 97,
+        "qualified_name": "BaseCache.get_backend_timeout",
+        "text": "    def get_backend_timeout(self, timeout=DEFAULT_TIMEOUT):\n        \"\"\"\n        Return the timeout value usable by this backend based upon the provided\n        timeout.\n        \"\"\"\n        if timeout == DEFAULT_TIMEOUT:\n            timeout = self.default_timeout\n        elif timeout == 0:\n            # ticket 21147 - avoid time.time() related precision issues\n            timeout = -1\n        return None if timeout is None else time.time() + timeout"
+      }
+    ],
+    "commit": "f14af5a88472ca10e2e94b37d6c17ee48cbdeb4d",
+    "reference_answer": "The sentinel selects self.default_timeout. An explicit zero becomes -1, producing a timestamp one second in the past. None remains None; other numeric values become time.time() + timeout.",
+    "essential_claims": [
+      {
+        "id": "D2.1",
+        "text": "DEFAULT_TIMEOUT selects self.default_timeout.",
+        "evidence": [
+          {
+            "file": "django/core/cache/backends/base.py",
+            "start": 92,
+            "end": 93,
+            "text": "        if timeout == DEFAULT_TIMEOUT:\n            timeout = self.default_timeout"
+          }
+        ]
+      },
+      {
+        "id": "D2.2",
+        "text": "Explicit zero is changed to -1 before adding time.time().",
+        "evidence": [
+          {
+            "file": "django/core/cache/backends/base.py",
+            "start": 94,
+            "end": 97,
+            "text": "        elif timeout == 0:\n            # ticket 21147 - avoid time.time() related precision issues\n            timeout = -1\n        return None if timeout is None else time.time() + timeout"
+          }
+        ]
+      },
+      {
+        "id": "D2.3",
+        "text": "None stays None; numeric timeouts become absolute timestamps.",
+        "evidence": [
+          {
+            "file": "django/core/cache/backends/base.py",
+            "start": 97,
+            "end": 97,
+            "text": "        return None if timeout is None else time.time() + timeout"
+          }
+        ]
+      }
+    ],
+    "review_status": "assistant_source_checked_not_independent_human_review",
+    "answerable": true
+  },
+  {
+    "id": "D3",
+    "repo": "django",
+    "kind": "location",
+    "question": "Which production class and source file resolve incoming request paths against nested URL patterns?",
+    "reference_spans": [
+      {
+        "file": "django/urls/resolvers.py",
+        "start": 504,
+        "end": 518,
+        "qualified_name": "URLResolver",
+        "text": "class URLResolver:\n    def __init__(\n        self, pattern, urlconf_name, default_kwargs=None, app_name=None, namespace=None\n    ):\n        self.pattern = pattern\n        # urlconf_name is the dotted Python path to the module defining\n        # urlpatterns. It may also be an object with an urlpatterns attribute\n        # or urlpatterns itself.\n        self.urlconf_name = urlconf_name\n        self.callback = None\n        self.default_kwargs = default_kwargs or {}\n        self.namespace = namespace\n        self.app_name = app_name\n        self._reverse_dict = {}\n        self._namespace_dict = {}"
+      }
+    ],
+    "commit": "f14af5a88472ca10e2e94b37d6c17ee48cbdeb4d",
+    "reference_answer": "URLResolver in django/urls/resolvers.py.",
+    "essential_claims": [
+      {
+        "id": "D3.1",
+        "text": "URLResolver in django/urls/resolvers.py.",
+        "evidence": [
+          {
+            "file": "django/urls/resolvers.py",
+            "start": 504,
+            "end": 504,
+            "text": "class URLResolver:"
+          }
+        ]
+      }
+    ],
+    "review_status": "assistant_source_checked_not_independent_human_review",
+    "answerable": true
+  },
+  {
+    "id": "D4",
+    "repo": "django",
+    "kind": "unanswerable",
+    "question": "What cache timeout value is configured in our production Django deployment right now?",
+    "reference_spans": [],
+    "commit": "f14af5a88472ca10e2e94b37d6c17ee48cbdeb4d",
+    "reference_answer": "Insufficient deployment/runtime evidence in this source snapshot; do not invent the requested production value or credential.",
+    "essential_claims": [],
+    "review_status": "assistant_source_checked_not_independent_human_review",
+    "answerable": false
+  },
+  {
+    "id": "L1",
+    "repo": "langchain",
+    "kind": "behavior",
+    "question": "In RunnableSequence.invoke, which step receives extra caller keyword arguments, and what happens to callbacks and the exception if a step fails?",
+    "reference_spans": [
+      {
+        "file": "libs/core/langchain_core/runnables/base.py",
+        "start": 3455,
+        "end": 3488,
+        "qualified_name": "RunnableSequence.invoke",
+        "text": "    def invoke(\n        self, input: Input, config: RunnableConfig | None = None, **kwargs: Any\n    ) -> Output:\n        # setup callbacks and context\n        config = ensure_config(config)\n        callback_manager = get_callback_manager_for_config(config)\n        # start the root run\n        run_manager = callback_manager.on_chain_start(\n            None,\n            input,\n            name=config.get(\"run_name\") or self.get_name(),\n            run_id=config.pop(\"run_id\", None),\n        )\n        input_ = input\n\n        # invoke all steps in sequence\n        try:\n            for i, step in enumerate(self.steps):\n                # mark each step as a child run\n                config = patch_config(\n                    config, callbacks=run_manager.get_child(f\"seq:step:{i + 1}\")\n                )\n                with set_config_context(config) as context:\n                    if i == 0:\n                        input_ = context.run(step.invoke, input_, config, **kwargs)\n                    else:\n                        input_ = context.run(step.invoke, input_, config)\n        # finish the root run\n        except BaseException as e:\n            run_manager.on_chain_error(e)\n            raise\n        else:\n            run_manager.on_chain_end(input_)\n            return cast(\"Output\", input_)"
+      }
+    ],
+    "commit": "fb10639a73d980ce05ea8614a84deaf08d572550",
+    "reference_answer": "Only the first step receives **kwargs. Each step gets child-run callbacks. A BaseException triggers on_chain_error and a bare raise; successful completion invokes on_chain_end and returns the last output.",
+    "essential_claims": [
+      {
+        "id": "L1.1",
+        "text": "Extra kwargs are passed only to the first step; child callback config is propagated.",
+        "evidence": [
+          {
+            "file": "libs/core/langchain_core/runnables/base.py",
+            "start": 3472,
+            "end": 3481,
+            "text": "            for i, step in enumerate(self.steps):\n                # mark each step as a child run\n                config = patch_config(\n                    config, callbacks=run_manager.get_child(f\"seq:step:{i + 1}\")\n                )\n                with set_config_context(config) as context:\n                    if i == 0:\n                        input_ = context.run(step.invoke, input_, config, **kwargs)\n                    else:\n                        input_ = context.run(step.invoke, input_, config)"
+          }
+        ]
+      },
+      {
+        "id": "L1.2",
+        "text": "Failure calls on_chain_error and re-raises.",
+        "evidence": [
+          {
+            "file": "libs/core/langchain_core/runnables/base.py",
+            "start": 3483,
+            "end": 3485,
+            "text": "        except BaseException as e:\n            run_manager.on_chain_error(e)\n            raise"
+          }
+        ]
+      }
+    ],
+    "review_status": "assistant_source_checked_not_independent_human_review",
+    "answerable": true
+  },
+  {
+    "id": "L2",
+    "repo": "langchain",
+    "kind": "behavior",
+    "question": "In BaseRetriever.invoke, which lifecycle callback runs on failure, which runs on success, and is a retrieval exception returned or re-raised?",
+    "reference_spans": [
+      {
+        "file": "libs/core/langchain_core/retrievers.py",
+        "start": 179,
+        "end": 234,
+        "qualified_name": "BaseRetriever.invoke",
+        "text": "    def invoke(\n        self, input: str, config: RunnableConfig | None = None, **kwargs: Any\n    ) -> list[Document]:\n        \"\"\"Invoke the retriever to get relevant documents.\n\n        Main entry point for synchronous retriever invocations.\n\n        Args:\n            input: The query string.\n            config: Configuration for the retriever.\n            **kwargs: Additional arguments to pass to the retriever.\n\n        Returns:\n            List of relevant documents.\n\n        Examples:\n        ```python\n        retriever.invoke(\"query\")\n        ```\n        \"\"\"\n        config = ensure_config(config)\n        inheritable_metadata = {\n            **(config.get(\"metadata\") or {}),\n            **self._get_ls_params(**kwargs),\n        }\n        callback_manager = CallbackManager.configure(\n            config.get(\"callbacks\"),\n            None,\n            verbose=kwargs.get(\"verbose\", False),\n            inheritable_tags=config.get(\"tags\"),\n            local_tags=self.tags,\n            inheritable_metadata=inheritable_metadata,\n            local_metadata=self.metadata,\n        )\n        run_manager = callback_manager.on_retriever_start(\n            None,\n            input,\n            name=config.get(\"run_name\") or self.get_name(),\n            run_id=kwargs.pop(\"run_id\", None),\n        )\n        try:\n            kwargs_ = kwargs if self._expects_other_args else {}\n            if self._new_arg_supported:\n                result = self._get_relevant_documents(\n                    input, run_manager=run_manager, **kwargs_\n                )\n            else:\n                result = self._get_relevant_documents(input, **kwargs_)\n        except Exception as e:\n            run_manager.on_retriever_error(e)\n            raise\n        else:\n            run_manager.on_retriever_end(\n                result,\n            )\n            return result"
+      }
+    ],
+    "commit": "fb10639a73d980ce05ea8614a84deaf08d572550",
+    "reference_answer": "Failure invokes on_retriever_error and re-raises the exception. Success invokes on_retriever_end(result) and returns result.",
+    "essential_claims": [
+      {
+        "id": "L2.1",
+        "text": "Failure calls on_retriever_error and re-raises.",
+        "evidence": [
+          {
+            "file": "libs/core/langchain_core/retrievers.py",
+            "start": 227,
+            "end": 229,
+            "text": "        except Exception as e:\n            run_manager.on_retriever_error(e)\n            raise"
+          }
+        ]
+      },
+      {
+        "id": "L2.2",
+        "text": "Success calls on_retriever_end and returns the documents.",
+        "evidence": [
+          {
+            "file": "libs/core/langchain_core/retrievers.py",
+            "start": 230,
+            "end": 234,
+            "text": "        else:\n            run_manager.on_retriever_end(\n                result,\n            )\n            return result"
+          }
+        ]
+      }
+    ],
+    "review_status": "assistant_source_checked_not_independent_human_review",
+    "answerable": true
+  },
+  {
+    "id": "L3",
+    "repo": "langchain",
+    "kind": "location",
+    "question": "Which production class and source file parse language model output as a JSON object?",
+    "reference_spans": [
+      {
+        "file": "libs/core/langchain_core/output_parsers/json.py",
+        "start": 32,
+        "end": 46,
+        "qualified_name": "JsonOutputParser",
+        "text": "class JsonOutputParser(BaseCumulativeTransformOutputParser[Any]):\n    \"\"\"Parse the output of an LLM call to a JSON object.\n\n    Probably the most reliable output parser for getting structured data that does *not*\n    use function calling.\n\n    When used in streaming mode, it will yield partial JSON objects containing all the\n    keys that have been returned so far.\n\n    In streaming, if `diff` is set to `True`, yields `JSONPatch` operations describing\n    the difference between the previous and the current object.\n    \"\"\"\n\n    pydantic_object: Annotated[type[TBaseModel] | None, SkipValidation()] = None  # type: ignore[valid-type]\n    \"\"\"The Pydantic object to use for validation."
+      }
+    ],
+    "commit": "fb10639a73d980ce05ea8614a84deaf08d572550",
+    "reference_answer": "JsonOutputParser in libs/core/langchain_core/output_parsers/json.py.",
+    "essential_claims": [
+      {
+        "id": "L3.1",
+        "text": "JsonOutputParser in libs/core/langchain_core/output_parsers/json.py.",
+        "evidence": [
+          {
+            "file": "libs/core/langchain_core/output_parsers/json.py",
+            "start": 32,
+            "end": 32,
+            "text": "class JsonOutputParser(BaseCumulativeTransformOutputParser[Any]):"
+          }
+        ]
+      }
+    ],
+    "review_status": "assistant_source_checked_not_independent_human_review",
+    "answerable": true
+  },
+  {
+    "id": "L4",
+    "repo": "langchain",
+    "kind": "unanswerable",
+    "question": "Which database endpoint and credentials does our deployed conversation-history service currently use?",
+    "reference_spans": [],
+    "commit": "fb10639a73d980ce05ea8614a84deaf08d572550",
+    "reference_answer": "Insufficient deployment/runtime evidence in this source snapshot; do not invent the requested production value or credential.",
+    "essential_claims": [],
+    "review_status": "assistant_source_checked_not_independent_human_review",
+    "answerable": false
+  },
+  {
+    "id": "S1",
+    "repo": "spring-boot",
+    "kind": "behavior",
+    "question": "Does SpringApplication.setAdditionalProfiles replace or append to its existing set, what happens to duplicates, and how is a null profiles array handled?",
+    "reference_spans": [
+      {
+        "file": "core/spring-boot/src/main/java/org/springframework/boot/SpringApplication.java",
+        "start": 1095,
+        "end": 1097,
+        "qualified_name": "SpringApplication.setAdditionalProfiles",
+        "text": "\tpublic void setAdditionalProfiles(String... profiles) {\n\t\tthis.additionalProfiles = Collections.unmodifiableSet(new LinkedHashSet<>(Arrays.asList(profiles)));\n\t}"
+      }
+    ],
+    "commit": "ebb5e11c70c50469c45f8aada56dd6d477c6b77f",
+    "reference_answer": "The setter replaces this.additionalProfiles with an unmodifiable LinkedHashSet built from Arrays.asList(profiles). Duplicates are removed and encounter order is preserved. There is no Assert.notNull check here: passing a null array reaches Arrays.asList and causes NullPointerException under the JDK API contract, rather than a Spring assertion IllegalArgumentException.",
+    "essential_claims": [
+      {
+        "id": "S1.1",
+        "text": "Replaces the existing set rather than adding to it.",
+        "evidence": [
+          {
+            "file": "core/spring-boot/src/main/java/org/springframework/boot/SpringApplication.java",
+            "start": 1095,
+            "end": 1097,
+            "text": "\tpublic void setAdditionalProfiles(String... profiles) {\n\t\tthis.additionalProfiles = Collections.unmodifiableSet(new LinkedHashSet<>(Arrays.asList(profiles)));\n\t}"
+          }
+        ]
+      },
+      {
+        "id": "S1.2",
+        "text": "LinkedHashSet removes duplicates and preserves encounter order.",
+        "evidence": [
+          {
+            "file": "core/spring-boot/src/main/java/org/springframework/boot/SpringApplication.java",
+            "start": 1096,
+            "end": 1096,
+            "text": "\t\tthis.additionalProfiles = Collections.unmodifiableSet(new LinkedHashSet<>(Arrays.asList(profiles)));"
+          }
+        ]
+      },
+      {
+        "id": "S1.3",
+        "text": "Null-array behavior follows Arrays.asList: NullPointerException, not an Assert.notNull IllegalArgumentException.",
+        "evidence": [
+          {
+            "file": "core/spring-boot/src/main/java/org/springframework/boot/SpringApplication.java",
+            "start": 1096,
+            "end": 1096,
+            "text": "\t\tthis.additionalProfiles = Collections.unmodifiableSet(new LinkedHashSet<>(Arrays.asList(profiles)));"
+          }
+        ]
+      }
+    ],
+    "review_status": "assistant_source_checked_not_independent_human_review",
+    "answerable": true,
+    "inference_note": "NullPointerException relies on standard JDK Arrays.asList null-array semantics in addition to the shown setter source."
+  },
+  {
+    "id": "S2",
+    "repo": "spring-boot",
+    "kind": "behavior",
+    "question": "Before any availability state has been recorded, what do ApplicationAvailabilityBean.getLivenessState and getReadinessState return?",
+    "reference_spans": [
+      {
+        "file": "core/spring-boot/src/main/java/org/springframework/boot/availability/ApplicationAvailability.java",
+        "start": 29,
+        "end": 31,
+        "qualified_name": "ApplicationAvailability.getLivenessState",
+        "text": "\tdefault LivenessState getLivenessState() {\n\t\treturn getState(LivenessState.class, LivenessState.BROKEN);\n\t}"
+      },
+      {
+        "file": "core/spring-boot/src/main/java/org/springframework/boot/availability/ApplicationAvailability.java",
+        "start": 37,
+        "end": 39,
+        "qualified_name": "ApplicationAvailability.getReadinessState",
+        "text": "\tdefault ReadinessState getReadinessState() {\n\t\treturn getState(ReadinessState.class, ReadinessState.REFUSING_TRAFFIC);\n\t}"
+      },
+      {
+        "file": "core/spring-boot/src/main/java/org/springframework/boot/availability/ApplicationAvailabilityBean.java",
+        "start": 42,
+        "end": 48,
+        "qualified_name": "ApplicationAvailabilityBean.getState",
+        "text": "\t@Override\n\tpublic <S extends AvailabilityState> S getState(Class<S> stateType, S defaultState) {\n\t\tAssert.notNull(stateType, \"'stateType' must not be null\");\n\t\tAssert.notNull(defaultState, \"'defaultState' must not be null\");\n\t\tS state = getState(stateType);\n\t\treturn (state != null) ? state : defaultState;\n\t}"
+      },
+      {
+        "file": "core/spring-boot/src/main/java/org/springframework/boot/availability/ApplicationAvailabilityBean.java",
+        "start": 50,
+        "end": 54,
+        "qualified_name": "ApplicationAvailabilityBean.getState",
+        "text": "\t@Override\n\tpublic <S extends AvailabilityState> @Nullable S getState(Class<S> stateType) {\n\t\tAvailabilityChangeEvent<S> event = getLastChangeEvent(stateType);\n\t\treturn (event != null) ? event.getState() : null;\n\t}"
+      }
+    ],
+    "commit": "ebb5e11c70c50469c45f8aada56dd6d477c6b77f",
+    "reference_answer": "The methods are inherited default methods on ApplicationAvailability. Liveness defaults to BROKEN and readiness defaults to REFUSING_TRAFFIC. ApplicationAvailabilityBean.getState returns its supplied default when no recorded state is found.",
+    "essential_claims": [
+      {
+        "id": "S2.1",
+        "text": "Liveness defaults to LivenessState.BROKEN.",
+        "evidence": [
+          {
+            "file": "core/spring-boot/src/main/java/org/springframework/boot/availability/ApplicationAvailability.java",
+            "start": 29,
+            "end": 31,
+            "text": "\tdefault LivenessState getLivenessState() {\n\t\treturn getState(LivenessState.class, LivenessState.BROKEN);\n\t}"
+          }
+        ]
+      },
+      {
+        "id": "S2.2",
+        "text": "Readiness defaults to ReadinessState.REFUSING_TRAFFIC.",
+        "evidence": [
+          {
+            "file": "core/spring-boot/src/main/java/org/springframework/boot/availability/ApplicationAvailability.java",
+            "start": 37,
+            "end": 39,
+            "text": "\tdefault ReadinessState getReadinessState() {\n\t\treturn getState(ReadinessState.class, ReadinessState.REFUSING_TRAFFIC);\n\t}"
+          }
+        ]
+      }
+    ],
+    "review_status": "assistant_source_checked_not_independent_human_review",
+    "answerable": true
+  },
+  {
+    "id": "S3",
+    "repo": "spring-boot",
+    "kind": "location",
+    "question": "Which production class and source file select the auto-configuration classes to import?",
+    "reference_spans": [
+      {
+        "file": "core/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/AutoConfigurationImportSelector.java",
+        "start": 66,
+        "end": 80,
+        "qualified_name": "AutoConfigurationImportSelector",
+        "text": "public class AutoConfigurationImportSelector implements DeferredImportSelector, BeanClassLoaderAware,\n\t\tResourceLoaderAware, BeanFactoryAware, EnvironmentAware, Ordered {\n\n\tstatic final int ORDER = Ordered.LOWEST_PRECEDENCE - 1;\n\n\tprivate static final AutoConfigurationEntry EMPTY_ENTRY = new AutoConfigurationEntry();\n\n\tprivate static final String[] NO_IMPORTS = {};\n\n\tprivate static final Log logger = LogFactory.getLog(AutoConfigurationImportSelector.class);\n\n\tprivate static final String PROPERTY_NAME_AUTOCONFIGURE_EXCLUDE = \"spring.autoconfigure.exclude\";\n\n\tprivate final Class<?> autoConfigurationAnnotation;\n"
+      }
+    ],
+    "commit": "ebb5e11c70c50469c45f8aada56dd6d477c6b77f",
+    "reference_answer": "AutoConfigurationImportSelector in core/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/AutoConfigurationImportSelector.java.",
+    "essential_claims": [
+      {
+        "id": "S3.1",
+        "text": "AutoConfigurationImportSelector in core/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/AutoConfigurationImportSelector.java.",
+        "evidence": [
+          {
+            "file": "core/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/AutoConfigurationImportSelector.java",
+            "start": 66,
+            "end": 66,
+            "text": "public class AutoConfigurationImportSelector implements DeferredImportSelector, BeanClassLoaderAware,"
+          }
+        ]
+      }
+    ],
+    "review_status": "assistant_source_checked_not_independent_human_review",
+    "answerable": true
+  },
+  {
+    "id": "S4",
+    "repo": "spring-boot",
+    "kind": "unanswerable",
+    "question": "What is the externally reachable actuator health URL and its access credential in our current production deployment?",
+    "reference_spans": [],
+    "commit": "ebb5e11c70c50469c45f8aada56dd6d477c6b77f",
+    "reference_answer": "Insufficient deployment/runtime evidence in this source snapshot; do not invent the requested production value or credential.",
+    "essential_claims": [],
+    "review_status": "assistant_source_checked_not_independent_human_review",
+    "answerable": false
+  },
+  {
+    "id": "K1",
+    "repo": "kafka",
+    "kind": "behavior",
+    "question": "In KafkaProducer.partition, how are an explicit record partition, a configured custom partitioner, and a serialized key handled? What changes when partitioner.ignore.keys is enabled?",
+    "reference_spans": [
+      {
+        "file": "clients/src/main/java/org/apache/kafka/clients/producer/KafkaProducer.java",
+        "start": 1686,
+        "end": 1706,
+        "qualified_name": "KafkaProducer.partition",
+        "text": "    private int partition(ProducerRecord<K, V> record, byte[] serializedKey, byte[] serializedValue, Cluster cluster) {\n        if (record.partition() != null)\n            return record.partition();\n\n        if (partitionerPlugin.get() != null) {\n            int customPartition = partitionerPlugin.get().partition(\n                record.topic(), record.key(), serializedKey, record.value(), serializedValue, cluster);\n            if (customPartition < 0) {\n                throw new IllegalArgumentException(String.format(\n                    \"The partitioner generated an invalid partition number: %d. Partition number should always be non-negative.\", customPartition));\n            }\n            return customPartition;\n        }\n\n        if (serializedKey != null && !partitionerIgnoreKeys) {\n            // hash the keyBytes to choose a partition\n            return BuiltInPartitioner.partitionForKey(serializedKey, cluster.partitionsForTopic(record.topic()).size());\n        } else {\n            return RecordMetadata.UNKNOWN_PARTITION;\n        }\n    }"
+      }
+    ],
+    "commit": "259b43a58e5dbe3276c727601c97de1b2c008c45",
+    "reference_answer": "An explicit record partition is returned first. A custom partitioner is called next, and a negative result throws IllegalArgumentException. Otherwise a non-null serialized key is passed to BuiltInPartitioner.partitionForKey unless partitionerIgnoreKeys is true; the fallback is RecordMetadata.UNKNOWN_PARTITION.",
+    "essential_claims": [
+      {
+        "id": "K1.1",
+        "text": "An explicit record partition takes precedence.",
+        "evidence": [
+          {
+            "file": "clients/src/main/java/org/apache/kafka/clients/producer/KafkaProducer.java",
+            "start": 1687,
+            "end": 1688,
+            "text": "        if (record.partition() != null)\n            return record.partition();"
+          }
+        ]
+      },
+      {
+        "id": "K1.2",
+        "text": "A configured custom partitioner is called and negative results are rejected.",
+        "evidence": [
+          {
+            "file": "clients/src/main/java/org/apache/kafka/clients/producer/KafkaProducer.java",
+            "start": 1690,
+            "end": 1697,
+            "text": "        if (partitionerPlugin.get() != null) {\n            int customPartition = partitionerPlugin.get().partition(\n                record.topic(), record.key(), serializedKey, record.value(), serializedValue, cluster);\n            if (customPartition < 0) {\n                throw new IllegalArgumentException(String.format(\n                    \"The partitioner generated an invalid partition number: %d. Partition number should always be non-negative.\", customPartition));\n            }\n            return customPartition;"
+          }
+        ]
+      },
+      {
+        "id": "K1.3",
+        "text": "A serialized key is hashed unless ignore-keys is enabled; otherwise UNKNOWN_PARTITION is returned.",
+        "evidence": [
+          {
+            "file": "clients/src/main/java/org/apache/kafka/clients/producer/KafkaProducer.java",
+            "start": 1700,
+            "end": 1704,
+            "text": "        if (serializedKey != null && !partitionerIgnoreKeys) {\n            // hash the keyBytes to choose a partition\n            return BuiltInPartitioner.partitionForKey(serializedKey, cluster.partitionsForTopic(record.topic()).size());\n        } else {\n            return RecordMetadata.UNKNOWN_PARTITION;"
+          }
+        ]
+      }
+    ],
+    "review_status": "assistant_source_checked_not_independent_human_review",
+    "answerable": true
+  },
+  {
+    "id": "K2",
+    "repo": "kafka",
+    "kind": "behavior",
+    "question": "When RecordAccumulator is closed, how are threads waiting for buffer memory awakened? Identify the call into the buffer pool and the operation that wakes waiters.",
+    "reference_spans": [
+      {
+        "file": "clients/src/main/java/org/apache/kafka/clients/producer/internals/RecordAccumulator.java",
+        "start": 1335,
+        "end": 1338,
+        "qualified_name": "RecordAccumulator.close",
+        "text": "    public void close() {\n        this.closed = true;\n        this.free.close();\n    }"
+      },
+      {
+        "file": "clients/src/main/java/org/apache/kafka/clients/producer/internals/BufferPool.java",
+        "start": 575,
+        "end": 584,
+        "qualified_name": "BufferPool.close",
+        "text": "    public void close() {\n        this.lock.lock();\n        this.closed = true;\n        try {\n            for (Condition waiter : this.waiters)\n                waiter.signal();\n        } finally {\n            this.lock.unlock();\n        }\n    }"
+      }
+    ],
+    "commit": "259b43a58e5dbe3276c727601c97de1b2c008c45",
+    "reference_answer": "RecordAccumulator.close sets closed and calls this.free.close(). BufferPool.close takes its lock, sets its own closed flag, and calls waiter.signal() for every Condition in waiters, unlocking in finally. It does not call a single shared Condition.signalAll().",
+    "essential_claims": [
+      {
+        "id": "K2.1",
+        "text": "Accumulator closure calls this.free.close().",
+        "evidence": [
+          {
+            "file": "clients/src/main/java/org/apache/kafka/clients/producer/internals/RecordAccumulator.java",
+            "start": 1335,
+            "end": 1338,
+            "text": "    public void close() {\n        this.closed = true;\n        this.free.close();\n    }"
+          }
+        ]
+      },
+      {
+        "id": "K2.2",
+        "text": "BufferPool.close locks, sets closed, signals each waiter with waiter.signal(), and unlocks in finally.",
+        "evidence": [
+          {
+            "file": "clients/src/main/java/org/apache/kafka/clients/producer/internals/BufferPool.java",
+            "start": 575,
+            "end": 584,
+            "text": "    public void close() {\n        this.lock.lock();\n        this.closed = true;\n        try {\n            for (Condition waiter : this.waiters)\n                waiter.signal();\n        } finally {\n            this.lock.unlock();\n        }\n    }"
+          }
+        ]
+      }
+    ],
+    "review_status": "assistant_source_checked_not_independent_human_review",
+    "answerable": true
+  },
+  {
+    "id": "K3",
+    "repo": "kafka",
+    "kind": "location",
+    "question": "Which production class and source file build a stream-processing topology through the high-level DSL?",
+    "reference_spans": [
+      {
+        "file": "streams/src/main/java/org/apache/kafka/streams/StreamsBuilder.java",
+        "start": 67,
+        "end": 81,
+        "qualified_name": "StreamsBuilder",
+        "text": "@InterfaceAudience.Public\npublic class StreamsBuilder {\n\n    /** The actual topology that is constructed by this StreamsBuilder. */\n    protected final Topology topology;\n\n    /** The topology's internal builder. */\n    @SuppressKafkaInternalApiUsage(\"KIP-1265: protected field exposes internal InternalTopologyBuilder for subclass access \u2014 pending KIP review to promote the type or refactor\")\n    protected final InternalTopologyBuilder internalTopologyBuilder;\n\n    @SuppressKafkaInternalApiUsage(\"KIP-1265: protected field exposes internal InternalStreamsBuilder for subclass access \u2014 pending KIP review to promote the type or refactor\")\n    protected final InternalStreamsBuilder internalStreamsBuilder;\n\n    public StreamsBuilder() {\n        topology = new Topology();"
+      }
+    ],
+    "commit": "259b43a58e5dbe3276c727601c97de1b2c008c45",
+    "reference_answer": "StreamsBuilder in streams/src/main/java/org/apache/kafka/streams/StreamsBuilder.java.",
+    "essential_claims": [
+      {
+        "id": "K3.1",
+        "text": "StreamsBuilder in streams/src/main/java/org/apache/kafka/streams/StreamsBuilder.java.",
+        "evidence": [
+          {
+            "file": "streams/src/main/java/org/apache/kafka/streams/StreamsBuilder.java",
+            "start": 67,
+            "end": 67,
+            "text": "@InterfaceAudience.Public"
+          }
+        ]
+      }
+    ],
+    "review_status": "assistant_source_checked_not_independent_human_review",
+    "answerable": true
+  },
+  {
+    "id": "K4",
+    "repo": "kafka",
+    "kind": "unanswerable",
+    "question": "What bootstrap broker addresses and SASL credentials are being used by our production Kafka producer right now?",
+    "reference_spans": [],
+    "commit": "259b43a58e5dbe3276c727601c97de1b2c008c45",
+    "reference_answer": "Insufficient deployment/runtime evidence in this source snapshot; do not invent the requested production value or credential.",
+    "essential_claims": [],
+    "review_status": "assistant_source_checked_not_independent_human_review",
+    "answerable": false
+  },
+  {
+    "id": "J1",
+    "repo": "jdk21u",
+    "kind": "behavior",
+    "question": "In HashMap.computeIfAbsent, what happens for an existing non-null value, for a null mapping-function result, and when the mapping function structurally modifies the map?",
+    "reference_spans": [
+      {
+        "file": "src/java.base/share/classes/java/util/HashMap.java",
+        "start": 1194,
+        "end": 1248,
+        "qualified_name": "HashMap.computeIfAbsent",
+        "text": "    @Override\n    public V computeIfAbsent(K key,\n                             Function<? super K, ? extends V> mappingFunction) {\n        if (mappingFunction == null)\n            throw new NullPointerException();\n        int hash = hash(key);\n        Node<K,V>[] tab; Node<K,V> first; int n, i;\n        int binCount = 0;\n        TreeNode<K,V> t = null;\n        Node<K,V> old = null;\n        if (size > threshold || (tab = table) == null ||\n            (n = tab.length) == 0)\n            n = (tab = resize()).length;\n        if ((first = tab[i = (n - 1) & hash]) != null) {\n            if (first instanceof TreeNode)\n                old = (t = (TreeNode<K,V>)first).getTreeNode(hash, key);\n            else {\n                Node<K,V> e = first; K k;\n                do {\n                    if (e.hash == hash &&\n                        ((k = e.key) == key || (key != null && key.equals(k)))) {\n                        old = e;\n                        break;\n                    }\n                    ++binCount;\n                } while ((e = e.next) != null);\n            }\n            V oldValue;\n            if (old != null && (oldValue = old.value) != null) {\n                afterNodeAccess(old);\n                return oldValue;\n            }\n        }\n        int mc = modCount;\n        V v = mappingFunction.apply(key);\n        if (mc != modCount) { throw new ConcurrentModificationException(); }\n        if (v == null) {\n            return null;\n        } else if (old != null) {\n            old.value = v;\n            afterNodeAccess(old);\n            return v;\n        }\n        else if (t != null)\n            t.putTreeVal(this, tab, hash, key, v);\n        else {\n            tab[i] = newNode(hash, key, v, first);\n            if (binCount >= TREEIFY_THRESHOLD - 1)\n                treeifyBin(tab, hash);\n        }\n        modCount = mc + 1;\n        ++size;\n        afterNodeInsertion(true);\n        return v;\n    }"
+      }
+    ],
+    "commit": "5d9cac4049895a80fcdefa9bb1b81e021fdabb33",
+    "reference_answer": "An existing non-null value is returned without applying the function. A null computed value is not installed. The method snapshots modCount around mappingFunction.apply and throws ConcurrentModificationException if the count changes, before handling a null result.",
+    "essential_claims": [
+      {
+        "id": "J1.1",
+        "text": "An existing non-null value is returned before mappingFunction.apply.",
+        "evidence": [
+          {
+            "file": "src/java.base/share/classes/java/util/HashMap.java",
+            "start": 1221,
+            "end": 1224,
+            "text": "            V oldValue;\n            if (old != null && (oldValue = old.value) != null) {\n                afterNodeAccess(old);\n                return oldValue;"
+          }
+        ]
+      },
+      {
+        "id": "J1.2",
+        "text": "A null result does not install a value.",
+        "evidence": [
+          {
+            "file": "src/java.base/share/classes/java/util/HashMap.java",
+            "start": 1227,
+            "end": 1231,
+            "text": "        int mc = modCount;\n        V v = mappingFunction.apply(key);\n        if (mc != modCount) { throw new ConcurrentModificationException(); }\n        if (v == null) {\n            return null;"
+          }
+        ]
+      },
+      {
+        "id": "J1.3",
+        "text": "Changed modCount after apply causes ConcurrentModificationException.",
+        "evidence": [
+          {
+            "file": "src/java.base/share/classes/java/util/HashMap.java",
+            "start": 1227,
+            "end": 1229,
+            "text": "        int mc = modCount;\n        V v = mappingFunction.apply(key);\n        if (mc != modCount) { throw new ConcurrentModificationException(); }"
+          }
+        ]
+      }
+    ],
+    "review_status": "assistant_source_checked_not_independent_human_review",
+    "answerable": true
+  },
+  {
+    "id": "J2",
+    "repo": "jdk21u",
+    "kind": "behavior",
+    "question": "In ConcurrentHashMap.computeIfAbsent, what happens for a null key or mapping function, for a null computed value, and for a detectably recursive update?",
+    "reference_spans": [
+      {
+        "file": "src/java.base/share/classes/java/util/concurrent/ConcurrentHashMap.java",
+        "start": 1691,
+        "end": 1778,
+        "qualified_name": "ConcurrentHashMap.computeIfAbsent",
+        "text": "    public V computeIfAbsent(K key, Function<? super K, ? extends V> mappingFunction) {\n        if (key == null || mappingFunction == null)\n            throw new NullPointerException();\n        int h = spread(key.hashCode());\n        V val = null;\n        int binCount = 0;\n        for (Node<K,V>[] tab = table;;) {\n            Node<K,V> f; int n, i, fh; K fk; V fv;\n            if (tab == null || (n = tab.length) == 0)\n                tab = initTable();\n            else if ((f = tabAt(tab, i = (n - 1) & h)) == null) {\n                Node<K,V> r = new ReservationNode<K,V>();\n                synchronized (r) {\n                    if (casTabAt(tab, i, null, r)) {\n                        binCount = 1;\n                        Node<K,V> node = null;\n                        try {\n                            if ((val = mappingFunction.apply(key)) != null)\n                                node = new Node<K,V>(h, key, val);\n                        } finally {\n                            setTabAt(tab, i, node);\n                        }\n                    }\n                }\n                if (binCount != 0)\n                    break;\n            }\n            else if ((fh = f.hash) == MOVED)\n                tab = helpTransfer(tab, f);\n            else if (fh == h    // check first node without acquiring lock\n                     && ((fk = f.key) == key || (fk != null && key.equals(fk)))\n                     && (fv = f.val) != null)\n                return fv;\n            else {\n                boolean added = false;\n                synchronized (f) {\n                    if (tabAt(tab, i) == f) {\n                        if (fh >= 0) {\n                            binCount = 1;\n                            for (Node<K,V> e = f;; ++binCount) {\n                                K ek;\n                                if (e.hash == h &&\n                                    ((ek = e.key) == key ||\n                                     (ek != null && key.equals(ek)))) {\n                                    val = e.val;\n                                    break;\n                                }\n                                Node<K,V> pred = e;\n                                if ((e = e.next) == null) {\n                                    if ((val = mappingFunction.apply(key)) != null) {\n                                        if (pred.next != null)\n                                            throw new IllegalStateException(\"Recursive update\");\n                                        added = true;\n                                        pred.next = new Node<K,V>(h, key, val);\n                                    }\n                                    break;\n                                }\n                            }\n                        }\n                        else if (f instanceof TreeBin) {\n                            binCount = 2;\n                            TreeBin<K,V> t = (TreeBin<K,V>)f;\n                            TreeNode<K,V> r, p;\n                            if ((r = t.root) != null &&\n                                (p = r.findTreeNode(h, key, null)) != null)\n                                val = p.val;\n                            else if ((val = mappingFunction.apply(key)) != null) {\n                                added = true;\n                                t.putTreeVal(h, key, val);\n                            }\n                        }\n                        else if (f instanceof ReservationNode)\n                            throw new IllegalStateException(\"Recursive update\");\n                    }\n                }\n                if (binCount != 0) {\n                    if (binCount >= TREEIFY_THRESHOLD)\n                        treeifyBin(tab, i);\n                    if (!added)\n                        return val;\n                    break;\n                }\n            }\n        }\n        if (val != null)\n            addCount(1L, binCount);\n        return val;\n    }"
+      }
+    ],
+    "commit": "5d9cac4049895a80fcdefa9bb1b81e021fdabb33",
+    "reference_answer": "Null key or null mapping function throws NullPointerException. A null computed value is not installed. Detectable recursive updates throw IllegalStateException(\"Recursive update\"), including a changed predecessor link or a ReservationNode encountered during computation.",
+    "essential_claims": [
+      {
+        "id": "J2.1",
+        "text": "Null key or mapping function throws NullPointerException.",
+        "evidence": [
+          {
+            "file": "src/java.base/share/classes/java/util/concurrent/ConcurrentHashMap.java",
+            "start": 1691,
+            "end": 1693,
+            "text": "    public V computeIfAbsent(K key, Function<? super K, ? extends V> mappingFunction) {\n        if (key == null || mappingFunction == null)\n            throw new NullPointerException();"
+          }
+        ]
+      },
+      {
+        "id": "J2.2",
+        "text": "A null computed result does not install a node.",
+        "evidence": [
+          {
+            "file": "src/java.base/share/classes/java/util/concurrent/ConcurrentHashMap.java",
+            "start": 1706,
+            "end": 1711,
+            "text": "                        Node<K,V> node = null;\n                        try {\n                            if ((val = mappingFunction.apply(key)) != null)\n                                node = new Node<K,V>(h, key, val);\n                        } finally {\n                            setTabAt(tab, i, node);"
+          }
+        ]
+      },
+      {
+        "id": "J2.3",
+        "text": "A detectably recursive update throws IllegalStateException.",
+        "evidence": [
+          {
+            "file": "src/java.base/share/classes/java/util/concurrent/ConcurrentHashMap.java",
+            "start": 1738,
+            "end": 1744,
+            "text": "                                Node<K,V> pred = e;\n                                if ((e = e.next) == null) {\n                                    if ((val = mappingFunction.apply(key)) != null) {\n                                        if (pred.next != null)\n                                            throw new IllegalStateException(\"Recursive update\");\n                                        added = true;\n                                        pred.next = new Node<K,V>(h, key, val);"
+          },
+          {
+            "file": "src/java.base/share/classes/java/util/concurrent/ConcurrentHashMap.java",
+            "start": 1762,
+            "end": 1763,
+            "text": "                        else if (f instanceof ReservationNode)\n                            throw new IllegalStateException(\"Recursive update\");"
+          }
+        ],
+        "evidence_mode": "any"
+      }
+    ],
+    "review_status": "assistant_source_checked_not_independent_human_review",
+    "answerable": true
+  },
+  {
+    "id": "J3",
+    "repo": "jdk21u",
+    "kind": "location",
+    "question": "Which production class and source file implement the work-stealing executor for fork/join tasks?",
+    "reference_spans": [
+      {
+        "file": "src/java.base/share/classes/java/util/concurrent/ForkJoinPool.java",
+        "start": 186,
+        "end": 200,
+        "qualified_name": "ForkJoinPool",
+        "text": "public class ForkJoinPool extends AbstractExecutorService {\n\n    /*\n     * Implementation Overview\n     *\n     * This class and its nested classes provide the main\n     * functionality and control for a set of worker threads:\n     * Submissions from non-FJ threads enter into submission queues.\n     * Workers take these tasks and typically split them into subtasks\n     * that may be stolen by other workers. Work-stealing based on\n     * randomized scans generally leads to better throughput than\n     * \"work dealing\" in which producers assign tasks to idle threads,\n     * in part because threads that have finished other tasks before\n     * the signalled thread wakes up (which can be a long time) can\n     * take the task instead.  Preference rules give first priority to"
+      }
+    ],
+    "commit": "5d9cac4049895a80fcdefa9bb1b81e021fdabb33",
+    "reference_answer": "ForkJoinPool in src/java.base/share/classes/java/util/concurrent/ForkJoinPool.java.",
+    "essential_claims": [
+      {
+        "id": "J3.1",
+        "text": "ForkJoinPool in src/java.base/share/classes/java/util/concurrent/ForkJoinPool.java.",
+        "evidence": [
+          {
+            "file": "src/java.base/share/classes/java/util/concurrent/ForkJoinPool.java",
+            "start": 186,
+            "end": 186,
+            "text": "public class ForkJoinPool extends AbstractExecutorService {"
+          }
+        ]
+      }
+    ],
+    "review_status": "assistant_source_checked_not_independent_human_review",
+    "answerable": true
+  },
+  {
+    "id": "J4",
+    "repo": "jdk21u",
+    "kind": "unanswerable",
+    "question": "What is the actual common ForkJoinPool parallelism of our running production JVM, including its runtime overrides?",
+    "reference_spans": [],
+    "commit": "5d9cac4049895a80fcdefa9bb1b81e021fdabb33",
+    "reference_answer": "Insufficient deployment/runtime evidence in this source snapshot; do not invent the requested production value or credential.",
+    "essential_claims": [],
+    "review_status": "assistant_source_checked_not_independent_human_review",
+    "answerable": false
+  }
+]

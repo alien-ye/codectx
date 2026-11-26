@@ -1,0 +1,41 @@
+kafka loaded {'files_total': 7684, 'files_by_language': {'unknown': 1174, 'python': 186, 'java': 6324}, 'symbols_total': 128267, 'refs_total': 866287, 'index': '/home/alien/share/codectx/bench/results/indexes/kafka'}
+<unknown>:952: SyntaxWarning: invalid escape sequence '\s'
+<unknown>:2131: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:36: SyntaxWarning: invalid escape sequence '\|'
+<unknown>:131: SyntaxWarning: invalid escape sequence '\|'
+<unknown>:195: SyntaxWarning: invalid escape sequence '\|'
+<unknown>:196: SyntaxWarning: invalid escape sequence '\('
+<unknown>:453: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:35: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:38: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:42: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:45: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:48: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:51: SyntaxWarning: invalid escape sequence '\.'
+kafka coverage complete
+kafka embedded 128267 in 64.31926305900015
+kafka queries complete
+kafka DONE {"lexical": {"n": 10, "file": {"R@1": 0.3, "R@5": 0.3, "R@10": 0.3, "MRR@10": 0.3}, "warm_median_ms": 49.4274255001983, "warm_p95_ms": 106.24704599968027, "symbol": {"R@1": 0.0, "R@5": 0.0, "R@10": 0.0, "MRR@10": 0.0}}, "semantic": {"n": 10, "file": {"R@1": 0.2, "R@5": 0.3, "R@10": 0.5, "MRR@10": 0.2611111111111111}, "warm_median_ms": 28.3314790001441, "warm_p95_ms": 45.83520799997132, "symbol": {"R@1": 0.1, "R@5": 0.2, "R@10": 0.3, "MRR@10": 0.14761904761904762}}, "hybrid": {"n": 10, "file": {"R@1": 0.0, "R@5": 0.3, "R@10": 0.5, "MRR@10": 0.11583333333333332}, "warm_median_ms": 86.4352680000593, "warm_p95_ms": 150.41171000029863, "symbol": {"R@1": 0.0, "R@5": 0.1, "R@10": 0.2, "MRR@10": 0.05}}, "hybrid_no_boost": {"n": 10, "file": {"R@1": 0.2, "R@5": 0.3, "R@10": 0.5, "MRR@10": 0.2625}, "warm_median_ms": 78.31485500014423, "warm_p95_ms": 164.30595500014533, "symbol": {"R@1": 0.0, "R@5": 0.1, "R@10": 0.3, "MRR@10": 0.0625}}, "file_bm25": {"n": 10, "file": {"R@1": 0.0, "R@5": 0.4, "R@10": 0.7, "MRR@10": 0.2017857142857143}, "warm_median_ms": 11.120302000108495, "warm_p95_ms": 35.84694900018803}, "rg_or": {"n": 10, "file": {"R@1": 0.0, "R@5": 0.0, "R@10": 0.0, "MRR@10": 0.0}, "warm_median_ms": 261.64604650011825, "warm_p95_ms": 590.2466110001114}}
+	Command being timed: "/home/alien/share/codectx/.venv/bin/python /home/alien/share/codectx/bench/evaluate.py kafka"
+	User time (seconds): 354.50
+	System time (seconds): 58.18
+	Percent of CPU this job got: 74%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 9:11.24
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 765748
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 733
+	Minor (reclaiming a frame) page faults: 777084
+	Voluntary context switches: 825701
+	Involuntary context switches: 13709
+	Swaps: 0
+	File system inputs: 277640
+	File system outputs: 1237873
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

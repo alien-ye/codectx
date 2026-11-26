@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.codectx/
+bench/results/indexes/
+*.egg-info/
+.env
+.env.*
+*.pem
+*.key
+*.sqlite3
+*.npy

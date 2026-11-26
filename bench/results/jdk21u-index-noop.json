@@ -1,0 +1,7 @@
+{
+  "repo": "jdk21u",
+  "run": "noop",
+  "seconds": 322.9658428769999,
+  "returncode": 0,
+  "stdout": "{\"total_files\": 68851, \"indexed_files\": 0, \"code_files\": 50470, \"skipped\": 0, \"reindexed\": 0, \"unchanged\": 68851, \"deleted\": 0, \"files_total\": 68851, \"files_by_language\": {\"unknown\": 18381, \"java\": 50468, \"python\": 2}, \"symbols_total\": 869718, \"refs_total\": 2252213, \"index\": \"/home/alien/share/codectx/bench/results/indexes/jdk21u\"}\n"
+}

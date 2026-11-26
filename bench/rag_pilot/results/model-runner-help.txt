@@ -1,0 +1,24 @@
+usage: run_model.py [-h] --base-url BASE_URL [--protocol {openai,ollama}]
+                    --model MODEL [--model-revision MODEL_REVISION]
+                    [--modes {none,bm25,codectx,gold} [{none,bm25,codectx,gold} ...]]
+                    [--case-id CASE_ID] [--limit LIMIT]
+                    [--max-tokens MAX_TOKENS] [--timeout TIMEOUT] --output
+                    OUTPUT
+
+Stateless, resumable model calls for Ollama or OpenAI-compatible local
+servers.
+
+options:
+  -h, --help            show this help message and exit
+  --base-url BASE_URL
+  --protocol {openai,ollama}
+  --model MODEL
+  --model-revision MODEL_REVISION
+                        Optional GGUF checksum or model digest, one per
+                        --model
+  --modes {none,bm25,codectx,gold} [{none,bm25,codectx,gold} ...]
+  --case-id CASE_ID
+  --limit LIMIT
+  --max-tokens MAX_TOKENS
+  --timeout TIMEOUT
+  --output OUTPUT

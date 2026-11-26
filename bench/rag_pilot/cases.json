@@ -1,0 +1,122 @@
+[
+  {
+    "id": "D1",
+    "repo": "django",
+    "kind": "behavior",
+    "question": "What happens when a QuerySet is indexed or sliced using a negative bound? What happens to a slice that specifies a step?"
+  },
+  {
+    "id": "D2",
+    "repo": "django",
+    "kind": "behavior",
+    "question": "How does BaseCache.get_backend_timeout handle DEFAULT_TIMEOUT, None, and a timeout of zero?"
+  },
+  {
+    "id": "D3",
+    "repo": "django",
+    "kind": "location",
+    "question": "Which production class and source file resolve incoming request paths against nested URL patterns?"
+  },
+  {
+    "id": "D4",
+    "repo": "django",
+    "kind": "unanswerable",
+    "question": "What cache timeout value is configured in our production Django deployment right now?"
+  },
+  {
+    "id": "L1",
+    "repo": "langchain",
+    "kind": "behavior",
+    "question": "In RunnableSequence.invoke, which step receives extra caller keyword arguments, and what happens to callbacks and the exception if a step fails?"
+  },
+  {
+    "id": "L2",
+    "repo": "langchain",
+    "kind": "behavior",
+    "question": "In BaseRetriever.invoke, which lifecycle callback runs on failure, which runs on success, and is a retrieval exception returned or re-raised?"
+  },
+  {
+    "id": "L3",
+    "repo": "langchain",
+    "kind": "location",
+    "question": "Which production class and source file parse language model output as a JSON object?"
+  },
+  {
+    "id": "L4",
+    "repo": "langchain",
+    "kind": "unanswerable",
+    "question": "Which database endpoint and credentials does our deployed conversation-history service currently use?"
+  },
+  {
+    "id": "S1",
+    "repo": "spring-boot",
+    "kind": "behavior",
+    "question": "Does SpringApplication.setAdditionalProfiles replace or append to its existing set, what happens to duplicates, and how is a null profiles array handled?"
+  },
+  {
+    "id": "S2",
+    "repo": "spring-boot",
+    "kind": "behavior",
+    "question": "Before any availability state has been recorded, what do ApplicationAvailabilityBean.getLivenessState and getReadinessState return?"
+  },
+  {
+    "id": "S3",
+    "repo": "spring-boot",
+    "kind": "location",
+    "question": "Which production class and source file select the auto-configuration classes to import?"
+  },
+  {
+    "id": "S4",
+    "repo": "spring-boot",
+    "kind": "unanswerable",
+    "question": "What is the externally reachable actuator health URL and its access credential in our current production deployment?"
+  },
+  {
+    "id": "K1",
+    "repo": "kafka",
+    "kind": "behavior",
+    "question": "In KafkaProducer.partition, how are an explicit record partition, a configured custom partitioner, and a serialized key handled? What changes when partitioner.ignore.keys is enabled?"
+  },
+  {
+    "id": "K2",
+    "repo": "kafka",
+    "kind": "behavior",
+    "question": "When RecordAccumulator is closed, how are threads waiting for buffer memory awakened? Identify the call into the buffer pool and the operation that wakes waiters."
+  },
+  {
+    "id": "K3",
+    "repo": "kafka",
+    "kind": "location",
+    "question": "Which production class and source file build a stream-processing topology through the high-level DSL?"
+  },
+  {
+    "id": "K4",
+    "repo": "kafka",
+    "kind": "unanswerable",
+    "question": "What bootstrap broker addresses and SASL credentials are being used by our production Kafka producer right now?"
+  },
+  {
+    "id": "J1",
+    "repo": "jdk21u",
+    "kind": "behavior",
+    "question": "In HashMap.computeIfAbsent, what happens for an existing non-null value, for a null mapping-function result, and when the mapping function structurally modifies the map?"
+  },
+  {
+    "id": "J2",
+    "repo": "jdk21u",
+    "kind": "behavior",
+    "question": "In ConcurrentHashMap.computeIfAbsent, what happens for a null key or mapping function, for a null computed value, and for a detectably recursive update?"
+  },
+  {
+    "id": "J3",
+    "repo": "jdk21u",
+    "kind": "location",
+    "question": "Which production class and source file implement the work-stealing executor for fork/join tasks?"
+  },
+  {
+    "id": "J4",
+    "repo": "jdk21u",
+    "kind": "unanswerable",
+    "question": "What is the actual common ForkJoinPool parallelism of our running production JVM, including its runtime overrides?"
+  }
+]

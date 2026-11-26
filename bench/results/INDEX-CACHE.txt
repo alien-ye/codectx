@@ -1,0 +1,15 @@
+Generated index cache removed on 2026-11-26 to reclaim about 2.9 GiB.
+Benchmark reports, evaluation JSON, context packs, timings and index manifests remain.
+The active virtual environment and the global codectx command were kept.
+Searches against these five benchmark indexes require rebuilding the cache first.
+
+To rebuild without overwriting historical benchmark timing/evaluation output:
+
+cd /home/alien/repo/codectx
+for repo in langchain django spring-boot kafka jdk21u; do
+  .venv/bin/codectx index "/home/alien/repo/$repo" --db "bench/results/indexes/$repo"
+  HF_HUB_OFFLINE=1 .venv/bin/codectx embed "/home/alien/repo/$repo" --db "bench/results/indexes/$repo"
+done
+
+These commands use the retained source checkouts and locally cached embedding model.
+Rebuilding consumes time and recreates the disk space removed during cleanup.

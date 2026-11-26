@@ -1,0 +1,32 @@
+{
+  "created_at_utc": "2026-11-25T12:43:25.627816+00:00",
+  "questions": 20,
+  "conditions": 4,
+  "reference_claims": 30,
+  "embedding_models": {
+    "kafka": "minishlab/potion-code-16M-v2",
+    "django": "minishlab/potion-code-16M-v2",
+    "jdk21u": "minishlab/potion-code-16M-v2",
+    "langchain": "minishlab/potion-code-16M-v2",
+    "spring-boot": "minishlab/potion-code-16M-v2"
+  },
+  "model_server_generation_requests_executed": 0,
+  "interactive_answer_artifacts": 80,
+  "interactive_condition_isolation": false,
+  "independent_human_review": false,
+  "source_commits": {
+    "django": "f14af5a88472ca10e2e94b37d6c17ee48cbdeb4d",
+    "langchain": "fb10639a73d980ce05ea8614a84deaf08d572550",
+    "spring-boot": "ebb5e11c70c50469c45f8aada56dd6d477c6b77f",
+    "kafka": "259b43a58e5dbe3276c727601c97de1b2c008c45",
+    "jdk21u": "5d9cac4049895a80fcdefa9bb1b81e021fdabb33"
+  },
+  "sha256": {
+    "cases.json": "f589ff688944540924c1e3f09388e168a30d22c043d201c754e287b2375c9c6a",
+    "cases.reviewed.json": "553e29871a5022b725967968544e007cff17f6b4f16b7043870974bd20bb3d8e",
+    "results/interactive-answers.jsonl": "0804a5b52d7b857538884587264443081c3035208e7c76d6d45d33e2efc94741",
+    "results/context-scores.json": "9aa3c1cb65f59ea824cdcbe7d1a148ca06a86bd2c72d1bbc7053db4e187fbb24",
+    "results/tests.txt": "97139ba942bb1995dbfa57eb26706e1d5de66a9bf629f95b56802b64762447f0",
+    "REPORT.md": "98a14903a0ba96fd353788b5ee55cf98975104e2c0e55c7b8da24cb88bc11e64"
+  }
+}
